@@ -1,0 +1,193 @@
+{
+  "main": {
+    "id": "091fdd2060e9c0a7",
+    "type": "split",
+    "children": [
+      {
+        "id": "3428b94c7a9a0528",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "bf98592f25916925",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "15867851d7b9db20",
+    "type": "split",
+    "children": [
+      {
+        "id": "c52cfb51fa0a7f6b",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "5b1b34e9ca5cc3cf",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "3b0c639bc5e9ff2d",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "05a2b9ac8f92c0dd",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "right": {
+    "id": "e89082e09d15b01d",
+    "type": "split",
+    "children": [
+      {
+        "id": "3f959c9c47bf1f9e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "17db10d925f60f06",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "4113e1e0aa63db2b",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "bf62cb092b268ecb",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "e0aad5e37499775d",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {}
+            }
+          },
+          {
+            "id": "c9fe502b4bfa6812",
+            "type": "leaf",
+            "state": {
+              "type": "advanced-tables-toolbar",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false
+    }
+  },
+  "active": "bf98592f25916925",
+  "lastOpenFiles": [
+    "Operating Systems.md",
+    "Introduction To Robotics.md",
+    "Covariance (Matrices).md",
+    "Neural Networks and Machine Learning.md",
+    "Multivariate Mean.md",
+    "Multivariate Gaussian Distribution.md",
+    "Pasted image 20240117142534.png",
+    "Pasted image 20240117142427.png",
+    "Pasted image 20240117142337.png",
+    "Pasted image 20240117142151.png",
+    "I_O techniques.md",
+    "Images/Pasted image 20240116094648.png",
+    "I/O techniques.md",
+    "What does the CPU do doing I_O instruction.md",
+    "What does the CPU do doing I/O instruction.md",
+    "Reason why caches exist.md",
+    "Memory Hierarchy.md",
+    "Interrupts and Control Stack.md",
+    "Homework for Intro to Robotics.md",
+    "Homework for Operating Systems.md",
+    "Computer Boot Sequence.md",
+    "Symmetric Multi-Processors.md",
+    "What does the CPU do doing I",
+    "I",
+    "Images/Pasted image 20240116101649.png",
+    "Images/Pasted image 20240116100654.png",
+    "Images/Pasted image 20240116100524.png",
+    "Doctor Conner's Stuff.md",
+    "Configuration of an object.md",
+    "configuration of object.md",
+    "Nearest Neighbor.md",
+    "k-Nearest Neighbor.md",
+    "Images/Pasted image 20240111103543.png",
+    "Images/Pasted image 20240111103623.png",
+    "Images",
+    "Fetch & Execute.md",
+    "Microprocessors.md",
+    "Basic elements.md",
+    "Matrix Multiplication.md"
+  ]
+}
