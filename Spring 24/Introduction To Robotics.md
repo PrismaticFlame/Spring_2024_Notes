@@ -165,3 +165,178 @@ Transformation composition bookkeeping: End effector to world $$q_w = ^wT_1 \cdo
 
 *Slides 11-15*
 
+# 1/19/24
+
+# [[Quaternion]] Representation
+- Extends complex numbers from 2 to 4 dimensions
+	- 3D rotation embedded in 4D yields smooth representation
+	- No gimble lock
+- Hamilton (1843)
+	- Not the Hamilton that threw away his shot!
+	- [[Hamiltonian]]
+	- Hamilton understood complex point in plane
+	- Looking for same in 3D space
+	- $i^2 = j^2 = k^2 = i \cdot j \cdot k = -1$
+- Cross products
+	- $i \cdot j = k$, and so on...
+
+# 1/24/24
+# [[2-Link Planar Arm- Differential Kinematics]]
+
+# [[Differential Kinematics]]
+
+# [[Differential Kinematics]] - [[Jacobian Map]]
+
+Jacobian map is **linear** map between tangent spaces
+
+# [[Differential Kinematics]] - [[Manipulability]]
+$M = \sqrt{\text{det}(J \cdot J^T)}$
+
+Linear algebra/systems terms
+- Rank of matrix (e.g., "loses rank if not invertible)
+- Condition number of matrix (how numerically stable the calculations are)
+	- 1 is ideal ("circle") ... (Slide 9)
+## [[Eigenvalues and Eigenvectors]]
+
+# [[Differential Kinematics]] - [[Singularities]]
+
+- If wiggling either joint (partial derivative), the resulting velocity is the same
+- Can only generate motion in 1 direction
+- Have lost a degree of freedom in my system
+- Jacobian Map $\dot{q}\ \epsilon \ T_qQ -> \dot{p}\ \epsilon \ T_p W$ 
+	- $\dot{p} = J(q)\dot{q}$
+- has "dropped rank"
+- There is a "null space"
+
+# Rigid Body in a 2D Plane Kinematics
+
+# [[Rigid Body Kinematics]]
+- Simple derivative and integrals for unconstrained
+
+- What about constrained motion
+	- Constrained motion (velocities) in 2D place
+		- Move (forward or backward) and turn (left right) about reference point
+		- Cannot move sideways
+	- Q) Can we get to any ($x, y, \theta$)
+	- Q) 
+
+# [[Nonholonomically Constrained Rigid Body]]
+Slides 17-19?
+
+# [[Vector Field Representation (Unicycle model)]]
+
+[[Affine Control System]] : $\dot{q} = g_0 (q) + \sum_i g_i (q) u_i$
+
+# [[Rolling Disk Model]]
+- Let $\psi$ be the angle of the disk's head rotating about the body y-axis
+- Let $R$ be the radius of the disk
+- Constraints
+	- No side slip and rolls without slipping (spinning)
+- Inputs
+	- Rotation of the disk (e.g. wheel drive)
+	- Rotation about the vertical
+
+# [[Differential-Drive Model]]
+- Left and right drive wheels
+	- Assume we don't care about rotation angle of wheels
+	- Wheel radius R
+	- Use wheel velocities as inputs
+		- $\dot{\psi}_L$ and $\dot{\psi}_R$ 
+
+## Body Rotation
+$v = R \dot{\psi}$ for velocity of wheels
+Euler's Theorem: any displacement equivalent to rotation about a fixed point!
+Distance between wheels and the center of the robot: $c$
+Distance from center of body to fixed point (not necessarily on the robot): $\rho$ 
+Center body velocity: $v_b$
+Angle between robot and fixed point: $\dot{\theta} = \omega_z$
+
+$$\omega_z(\rho - c) = R\dot{\psi}_L$$
+$$\omega_z\rho = v_b$$
+$$\omega_z(\rho + c) = R\dot{\psi}_R$$
+$$\rho - c = \frac{R\dot{\psi}_L}{\omega_z}$$
+$$\omega_z(\rho - c + 2c) = R\dot{\psi}_R$$
+$$\omega_z(\frac{R\dot{\psi}_L}{\omega_z}) + \omega_z2c = R\dot{\psi}_R$$
+$$R\dot{\psi}_L + \omega_z2c = R\dot{\psi}_R$$
+$$\omega_z = \frac{R\dot{\psi}_R - R\dot{\psi}_L}{2c}$$
+$$v_b = \omega_z\rho = \omega_z(\frac{R\dot{\psi}_L}{\omega_z} + c)$$
+$$v_b = R\dot{\psi}_L + \frac{R\dot{\psi}_R - R\dot{\psi}_L}{2c}c$$
+$$v_b = \frac{R\dot{\psi}_L}{2} + \frac{R\dot{\psi}_R}{2}$$
+
+# 1/29/24
+# Example Block Diagram
+## [[Feedback (Closed-loop) Control]]
+## [[Feedback Control]]
+
+
+# Mathematical Model: (<mark style="background: #FF5582A6;">Won't be on test</mark>)
+
+R - Resistance
+L - Inductance
+V - Voltage
+K - Voltage/Torque constant
+$\tau$ - Torque
+$i$ - Current
+$f$ - Friction Constant
+$\omega$ - Motor Rotation Rate
+G - Gear Ratio
+$J$ - Inertia
+
+## [[State Space Form]]
+
+## Control Tasks
+- Velocity Control:     $error(t) = \dot{\theta}_{SP} - \dot{\theta}(t)$
+- Position Control:    $error(t) = \theta_{SP} - \theta(t)$
+- Setpoint tracking:   $error(t) = \theta_{SP} - \theta(t)$
+	- Could have velocity or combination
+- [[Disturbance Rejection]]
+
+#  [[Proportional-Integral-Derivative Control]] (PID) Controller
+- Error = setpoint - process variable
+	- $e(t) = SP - PV$
+- Control:
+	- $V_c = V_{bias} + K_pe(t) + K_i\int_0^te(t)dt + K_d\dot{e}(t)$
+
+- Bias              - constant term
+- Proportional - control effort proportional to the error at this point in time
+- Integral        - control effort proportional to the integral of error over time
+- Derivative     - control effort proportional to the rate of change in error
+
+| Parameter | Rise Time | Overshoot | Setting Time | Steady-state Error | Stability |
+| ---- | ---- | ---- | ---- | ---- | ---- |
+| $K_p$ | Decrease | Increase | Small change | Decrease | Degrade |
+| $K_i$ | Decrease | Increase | Increase | Eliminate | Degrade |
+| $K_d$ | Minor Change | Decrease | Decrease | No effect in theory | Improve if $K_d$ small |
+
+## Standard Forms
+- Control
+	- $V_c = V_{bias} + K_pe(t) + K_i\int_0^te(t)dt + K_d\dot{e}(t)$
+	- $V_c = V_{bias} + K (e(t) + \frac{1}{T_1}\int_0^te(t)dt + T_d\dot{e}(t))$
+
+# [[State Space Equations]]
+
+# [[Frequency Response]]
+
+# Computers are discrete time
+- Sample sensor data
+	- Takes time to process data after sensing
+- Estimate current state
+	- Calculations take time
+- Calculate control output
+	- Calculations take time
+- Send output to motor
+	- Data conversion and transmission takes time
+
+- Typical control rates of 10-1000Hz (samples per second)
+- Need discrete approximations to derivatives and integrals
+
+## [[Discrete Time Calculations]]
+- Sample Period
+	- $\Delta t = t_k - t_{k-1}$
+- Derivative (Euler's method)
+	- $\dot{e} \approx \frac{e_k - e_{k-1}}{\Delta t}$
+- Integral (Trapezoid Rule)
+	- $\int_o^t e dt \approx$ 
+- Control Calculations
+
+

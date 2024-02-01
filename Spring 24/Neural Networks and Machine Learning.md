@@ -134,3 +134,365 @@ $$cov(X^{(i)}, X^{(j)}) = \frac{\sum_{k=1}^{(i)}}{N-1}$$
 - Symmetric matrix
 	- $cov(X^{(i)}, X^{(j)}) = cov(X^{(j)}, X^{(i)})$
 
+# [[Decision Trees]]
+- Decision trees are designed to work with non-numeric data
+	- Binary features (Yes/No, True/False)
+	- Categorical features
+- Their goal is to best divide the data (to make a decision)
+- Data is split one feature at a time which forms a tree-structure with data splits at each node
+- How the data is split can be posed as a question which means decision trees are highly interpretable
+
+## An Example Dataset
+Consider the following dataset containing 8 samples and 2 features
+
+| Features | Class |
+| ---- | ---- |
+| $x_1$ = <t,d> | $y_1$ = + |
+| $x_2$ = <s,d> | $y_2$ = + |
+| $x_3$ = <t, b> | $y_3$ = - |
+| $x_4$ = <t,r> | $y_4$ = - |
+| $x_5$ = <s,b> | $y_5$ = + |
+
+Height = (Tall, Short)
+Hair = (Dark, Blonde, Red)
+
+## Decision Stump
+- The complexity of the classification function depends on the depth of the decision tree
+- A depth-1 decision tree is called a **decision stump**
+
+## Decision Tree
+- The deeper the tree, the more complex the classification function
+- There is no limit to the depth of the decision tree
+
+## Decision Tree Algorithm
+High level view of a decision tree for a binary classification task:
+**Algorithm: divide(*data*)** 
+1. If (all classes are the same in data)
+2. return
+3. *feature* = find_feature_which_best_splits( data )
+4. data_yes, data_no = split_by( feature, data )
+5. divide( data_yes )
+6. divide( data_no )
+
+## Splitting the Data
+- Random Baseline = randomly choose which feature to split
+- Based on Class Ratio?:
+	- For each number, count the number of samples in the true class and the number of samples in the false class
+	- Select the feature which has the best class ratio (i.e. most true samples in the split)?
+	- No guarantee it will be a good split in the long run
+	- What about the other node (which split to consider?)
+Information Theory to the rescue!
+
+## [[Information Theory]]
+- What is information?
+	- Information reduces uncertainity
+	- Information is relative to what you already know
+	- The information content of a message is related to how surprising the information is.
+	- Therefore, information relies on the information that you already know, so therefore information relies on context.
+
+![[Pasted image 20240119142421.png]]
+## What is a "Surprising Message"
+- Surprise is something you don't expect ( #interesting )
+- Suppose I have a coin with heads on both sides
+	- I flip the coin and tell you the outcome was heads
+	- How much information did you gain?
+- Suppose I have a normal (fair) coin?
+	- I flip the coin and tell you the outcome was heads
+	- How much information did you gain?
+
+# Information as Bits
+- Assume messages are conveyed with bits (0 or 1)
+- Conveying the outcome of a fair coin toss requires 1 bit of information
+	- It conveys one of two equally likely outcomes
+- Conveying an outcome that is certain requires 0 bits
+- Conveying the outcome of an experiment with 8 equally likely outcomes requires 3 bits
+	- $2^3 = 8$ <- encode each outcome to a bit string
+		- 0 0 0 
+		- 0 0 1
+		- 0 1 0
+		- 0 1 1
+		- 1 0 0 
+		- 1 0 1
+		- 1 1 1
+
+# Information as Probability
+- In general, if an outcome has a probability $p$, the information content of the message describe that outcome is: $$I(p) = -log_2(p)\ \ \& \ \ I(0) = 0$$
+That is, information content of message conveying an outcome is the negative log of the probability of that outcome occurring
+
+For example: Conveying the outcome of an experiment with 8 equally likely outcomes requires 3 bits
+That is, each outcome has probability 1/8:$$I(0.125) = -log_2(0.125) = -(3) = 3$$
+And therefore each message about the outcome of the experiment has an information content of 3 bits
+
+## Information is Subjective
+![[Pasted image 20240119143233.png]]
+
+## Information and [[Shannon's Entropy]]
+- Suppose we have a message that conveys the result of a random experiment with *m* possible discrete outcomes
+- Each outcome has the probability: $p_1, p_2, p_3, ..., p_m$
+- The expected information content of that message is called the entropy of the probability distribution:$$Entropy = H(p_1, p_2, ..., p_m) = \sum_{i=1}^m p_i * I(p_i)$$
+- $$Information = I(p) = -log_2(p)\ \ \& \ \ I(0) = 0$$
+
+## [[Shannon's Entropy]] as a Measure of Information
+Let $\vec{P}$ be a discrete probability distribution:$$\vec{P} = <p_1, P_2, ... p_m>$$
+The entropy of the distribution, $\vec{P}$ is given by: $$Entropy = H(\vec{P}) = \sum_{i=1}^m p_i * I(p_i) = - \sum_{i=1}^m p_i * log_2(p_i)$$
+## [[Shannon's Entropy]]
+- Shannon's Entropy gets more interesting when the probabilities of each outcome are not the same $$\vec{P} = <0.7, 0.2, 0.1>$$
+![[Pasted image 20240119144018.png]]
+
+# [[Estimating Generalization]]
+- Remember: generalization is the goal
+	- maximize the model's performance on novel (unseen) data
+	- That is, maximize the model's performance on test/validation data
+- Training accuracy is often optimistic with the respect to the novel data
+- We estimate generalization using:
+	- Hold out or, even better [[Cross-Validation]]
+
+## Simple Test/ Train Split
+![[Pasted image 20240124191238.png]]
+
+## Example of Overfitting with a Decision Tree
+![[Pasted image 20240124191312.png]]
+
+# [[Overfitting]]
+- Overfitting relates to training error decreasing at the expense of model generalization
+<mark style="background: #ADCCFFA6;">Minimizing training error does not necessarily minimize generalizability (test/validation)</mark> 
+![[Pasted image 20240124191630.png]]
+
+## What causes Overfitting?
+- How does it happen?
+	- Poor sampling/ Outliers
+	- Overtraining
+	- Poor algorithm selection / hyperparameter selection, etc...
+- **[[Hyperparameter]]** = an input parameter to a machine learning algorithm that controls the learning process and is not learned during training.
+
+# [[Overtraining]]
+- Overtraining
+	- Training a model for too many epochs
+	- Making improvements to training error at the expense of validation error
+- [[Epochs|Epoch]] = 1 iteration over the training data
+- How to avoid overtraining?
+	- Monitor test/ validation error loss
+	- Introduce heuristics such as max-depth for a decision tree
+	- Introduce regularization, drop out, etc... (these will be discussed later in the course)
+![[Pasted image 20240124192143.png]]
+
+# Poor Algorithm / Hyperparameter Selection
+- Choosing good hyperparameter values (e.g. max depth) can help prevent overfitting
+- Choosing an appropriate algorithm can help prevent overfitting
+	- E.g. use a linear classifier for linear data
+
+# Use [[Cross-Validation]] to Tune [[Hyperparameter]]s
+- Help prevent the effect of bad sampling / outliers
+- Helps to choose hyperparameter values that generalize well
+- **[[Grid-Search]]**:
+	- A common way to tune (optimize) hyperparameters
+	- Try a bunch of values in an ordered (grid-like) manner
+- Try a bunch of values and choose the one that performs best on the validation/test data
+
+# [[Hold Out Method]]
+![[Pasted image 20240124193043.png]]
+
+![[Pasted image 20240124193219.png]]
+
+![[Pasted image 20240124193238.png]]
+
+# [[K-Fold Cross-Validation]] (K=5)
+
+![[Pasted image 20240124193313.png]]
+
+![[Pasted image 20240124193515.png]]
+
+- Calculate performance metric for each fold
+- Report the metric averaged over all folds
+$$P=\frac{1}{k} \sum_{i=1}^{k} p_i$$
+Where $P$ is overall performance, $p_i$ is the performance metric for fold $i$ and $k$ is the number of folds
+
+## Theory Behind This
+### [[Bias-Variance Trade-Off]]
+- Variance - the amount that your model is sensitive to the data
+	- If variance is higher, then performance will differ a lot between runs of Cross-Validation
+- Bias - the amount of assumptions (bias) built into the model
+	- If bias is high, then performance will differ little between runs of Cross-Validation
+- "**bias** is reduced by using only local information"
+- "**variance** can only be reduced by averaging over multiple observations, which inherently means using information from a larger region."
+<mark style="background: #ADCCFFA6;">Question: In KNN, how does increasing K affect bias/variance?</mark>
+
+| Complex Models | Simple Models |  |
+| ---- | ---- | ---- |
+| High Variance | Low Variance |  |
+| Low Bias | High Bias<br> |  |
+Complex models (e.g. high degree polynomials) are highly dependent on the training data (high variance): Prone to [[Overfitting]]
+
+Simple models (e.g. linear models) have strong assumptions which prevents them from fitting the data too closely. However: Prone to [[Underfitting]]
+
+## Decision Tree Depth and Bias / Variance
+![[Pasted image 20240124194149.png]]
+
+# [[Underfitting]] and [[Overfitting]]
+![[Pasted image 20240124194605.png]]
+
+# [[Outliers]] and [[Bias]]
+- Simple models reduces the effects of outliers
+	- We want to reduce the influence of outliers
+	- We want the model to fit a more global mean
+![[Pasted image 20240126141334.png]]
+
+# Notes On Cross-Validation
+![[Pasted image 20240126142032.png]]
+
+## Good Practices
+Shuffle your data before doing a test/train split
+- Ordering may be present in the data
+	- On purpose or inadvertently
+- You don't want the ordering to bias the test/train split or k-fold split
+	- And therefore create data with different distributions
+<mark style="background: #BBFABBA6;">Tip: Shuffling your data, then sequentially splitting makes dividing it into buckets easier anyway</mark>
+![[Pasted image 20240126142242.png]]
+
+![[Pasted image 20240126142306.png]]
+
+### Stratified Split
+- You should ensure a similar class distribution for splits as is present in the whole dataset
+### Train using the data's true class balance
+- When workin with imbalanced datasets it is best to try to train with the natural class ratio
+	- This should be your default option
+
+![[Pasted image 20240126142443.png]]
+
+
+---
+
+# The [[Perceptron]]
+- An early linear classifier
+- Iteratively updates the weights to find a line that divides the data perfectly
+	- Sign of output is used as class
+- Performs binary classification
+	- Encodes positive class as +1, and negative class as -1
+
+![[Pasted image 20240126144646.png]]
+
+- Assumes data is linearly separable
+- No guarantee of convergence for non linearly separable data
+- No guarantee of optimality
+	- Furthermore, no guarantee it gets better over time
+
+# [[Regression]]
+- In regression, we are estimating the relationship between inputs and outputs
+"As temperature increases, fan speed increases"
+"As outside temperature and sunniness increase, cooling energy requirements increase"
+
+- Statistically
+	- Estimating the relationship between independent and dependent variables
+	- Independent var is input
+	- Dependent var is output
+- Graphically
+	- Curve-fitting, surface fitting, function approximation
+
+# [[Linear Regression]]
+- Most real-world relationships are NOT linear, however:
+	- Many processes can be approximated
+	- LR can be solved by hands
+	- LR is good intro to machine learning
+	- LR is used as part of larger machine learning models
+
+- Because we assume there is a linear relationship between inputs and outputs
+- We create our model that defines this linear relationship
+- At it's most basic, this is the slope of the line and the y-intercept
+	- Y-intersect is called the bias and defines the height of the line
+
+- For multiple dimensions the line is defined by its slope for each dimension
+- Still a single bias
+- It creates a plane or hyperplane defined as: $$\hat{y} = b + \theta^{(1)}x^{(1)} + \theta^{(2)}x^{(2)} + ... + \theta^{(d)}x^{(d)}$$
+- We call the set of parameters defining the [[Hyperplane]] the weights (indicated by theta ($\theta$))
+
+## Vector Notation
+Given a hyperplane of a d dimensions: $$\hat{y} = b + \theta^{(1)}x^{(1)} + \theta^{(2)}x^{(2)} + ... + \theta^{(d)}x^{(d)}$$
+We can use a compact vector representation by adding a bias dimension each sample 
+($x^{(0)} = 1$)
+$$\hat{y} = b + \theta^{(0)}x^{(0)} + \theta^{(1)}x^{(1)} + \theta^{(2)}x^{(2)} + ... + \theta^{(d)}x^{(d)}$$
+$$\hat{y} = \theta x$$
+## Generalized problem set up
+![[Pasted image 20240129142225.png]]
+
+## [[Mean Squared Error]]
+$$J(\theta) = \frac{1}{n}\sum_{i=1}^{n}(y_i - \hat{y}_i)^2$$
+$$= \frac{1}{n}(Y-X\theta)^T(Y-X\theta)$$
+
+
+## Training - Problem Set Up
+![[Pasted image 20240129143222.png]]
+
+## Geometric Interpretation
+$$J(\theta) = \frac{1}{n}\sum_{i=1}^{n}(y_i - \hat{y}_i)^2 = J(\theta) = \frac{1}{n}\sum_{i=1}^{n}(y_i - x_i\theta)^2$$
+- Our dataset is fixed, so we treat Y and X as fixed
+	- Therefore: Sum of Squared Errors is a quadratic equation
+	- A quadratic is a polynomial with highest order of 2
+	- When plotted quadratics from paraboloids
+	- Paraboloid = quadric surface
+
+![[Pasted image 20240129143508.png]]
+
+• Our goal is to minimize loss 
+• The paraboloid is a surface defined by the loss 
+• Minimum loss is the low point on the surface
+
+• Our loss is a paraboloid and is therefore differentiable, and it has a single location where the derivative is 0
+• We can find the minimum by following the slope until we arrive at the minimum
+
+"Learning is about finding the low point on the objective function"
+
+## How to solve
+- Two methods
+	- Least Squares Estimation
+		- Closed Form Solution
+		- Analytical (all at once) - more efficient if possible
+	- Gradient Descent
+		- Iterative - more flexible solution method
+
+## [[Least Squares Estimation]]
+
+$$\frac{1}{n}(Y^TY-Y^TX\theta - X^T\theta^TY + X^T\theta^TX\theta)$$
+
+## [[Gradient Descent]]
+![[Pasted image 20240131141343.png]]
+
+- The iterative solution is most commonly used in practice
+- Avoids/reduces memory and computational requirements
+- Works with more loss functions
+- Guarantee the optimum solution in theory, but not in practice
+- Requires [[hyperparameter]] tuning
+
+1. Start somewhere on the loss surface
+2. Find the direction to move
+3. Move in that direction
+4. Repeat steps 2 and 3
+
+### [[Learning Rate]]
+- The learning rate is used in the update step (step 2) of gradient descent
+- It scales the step size =amount we move (adjust $\theta$)
+$$\theta_{new} = \theta - \eta \frac{1}{n}X^T(\hat{Y} - Y)$$
+- Too high and you bounce around the solution
+- Too low and you won't reach the solution before stopping
+- Typically it is a scalar, but it could be a vector (1xd)
+- Can be fixed, or decrease with time
+
+### [[Stopping Conditions]]
+- Gradient descent can take a long time to converge
+- If we make the learning rate too high, it may never converge (and therefore never stop)
+- We add stopping conditions
+	- Maximum number of [[epochs]] and/or small enough loss
+
+- Stop when number of epochs > max_epoch
+- Stop when loss is < min_loss
+
+## Linear Regression
+```pseudo
+1. Initialize theta (vector of 0's)
+2. While stopping conditions are not met
+	1. learning rate equation
+3. Output model parameters(theta)
+```
+
+## Least Squares Estimation (Analytical)
+$$\theta = (X^TX)^{-1}X^TY$$
+
