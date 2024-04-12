@@ -1,4 +1,4 @@
-Certainly! The fetch-and-execute cycle is a fundamental concept in the operation of a computer's central processing unit (CPU). It describes the sequence of steps that the CPU follows to fetch instructions from memory, execute those instructions, and then repeat the process. This cycle is the core of the von Neumann architecture, which is the foundation for most modern computer systems.
+The fetch-and-execute cycle is a fundamental concept in the operation of a computer's central processing unit (CPU). It describes the sequence of steps that the CPU follows to fetch instructions from memory, execute those instructions, and then repeat the process. This cycle is the core of the von Neumann architecture, which is the foundation for most modern computer systems.
 
 Here are the basic steps of the fetch-and-execute cycle:
 

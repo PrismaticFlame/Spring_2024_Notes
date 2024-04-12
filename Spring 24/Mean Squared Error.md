@@ -2,7 +2,7 @@
 
 ### Definition:
 
-For a dataset with \(m\) observations, where \(y_i\) is the actual value and \(\hat{y}_i\) is the predicted value for the \(i\)-th observation, the Mean Squared Error is calculated as follows:
+For a dataset with $m$ observations, where $y_i$ is the actual value and $\hat{y}_i$ is the predicted value for the $i$-th observation, the Mean Squared Error is calculated as follows:
 
 $\text{MSE} = \frac{1}{m} \sum_{i=1}^{m} (y_i - \hat{y}_i)^2$
 

@@ -10,10 +10,10 @@ In neural networks, each neuron typically has an associated bias term. The bias 
 $y = \sigma(wx + b)$
 
 Here:
-- \(x\) is the input to the neuron.
-- \(w\) is the weight associated with the input.
-- \(b\) is the bias term.
-- \(\sigma\) is the activation function.
+- $x$ is the input to the neuron.
+- $w$ is the weight associated with the input.
+- $b$ is the bias term.
+- $\sigma$ is the activation function.
 
 The bias term allows the neural network to model relationships that do not necessarily pass through the origin. It provides flexibility in adjusting the output even when the input is zero.
 

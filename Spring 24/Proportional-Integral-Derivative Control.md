@@ -12,7 +12,7 @@ Proportional-Integral-Derivative (PID) control is a widely used control strategy
 2. **Control Action:**
    - The proportional action seeks to reduce the error by applying a control effort that is proportional to the magnitude of the error.
 
-3. **Proportional Gain ($Kp$):**
+3. **[[Proportional Gain]] ($Kp$):**
    - The proportional gain, denoted as ($Kp$), determines the strength of the proportional action. It is a tuning parameter that influences the responsiveness of the system.
 
 4. **Mathematical Representation:**
@@ -29,7 +29,7 @@ Proportional-Integral-Derivative (PID) control is a widely used control strategy
 2. **Control Action:**
    - Integral control eliminates steady-state errors by continuously summing the error and applying a corrective action based on the total accumulated error.
 
-3. **Integral Gain ($Ki$):**
+3. **[[Intergral Gain|Integral Gain]] ($Ki$):**
    - The integral gain, denoted as ($Ki$), is a tuning parameter that determines the strength of the integral action. It influences the system's ability to eliminate steady-state errors.
 
 4. **Mathematical Representation:**
@@ -46,7 +46,7 @@ Proportional-Integral-Derivative (PID) control is a widely used control strategy
 2. **Control Action:**
    - Derivative control acts to dampen the system's response and reduce overshooting by applying a control effort proportional to the rate of change of the error.
 
-3. **Derivative Gain ($Kd$):**
+3. **[[Derivative Gain]] ($Kd$):**
    - The derivative gain, denoted as ($Kd$), is a tuning parameter that determines the strength of the derivative action. It influences the system's ability to dampen oscillations.
 
 4. **Mathematical Representation:**

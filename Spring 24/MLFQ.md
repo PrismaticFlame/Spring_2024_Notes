@@ -1,4 +1,4 @@
-MLFQ stands for "Multi-Level Feedback Queue," and it is a scheduling algorithm used in operating systems for managing the execution of processes. The key idea behind MLFQ is to assign processes to different priority levels based on their behavior and performance, allowing the scheduler to adapt to the characteristics of individual processes. MLFQ is particularly effective in handling both CPU-bound and I/O-bound processes.
+MLFQ stands for "Multi-Level Feedback Queue," and it is a scheduling algorithm used in operating systems for managing the execution of processes. The key idea behind MLFQ is to assign processes to different priority levels based on their behavior and performance, allowing the [[scheduler]] to adapt to the characteristics of individual processes. MLFQ is particularly effective in handling both CPU-bound and I/O-bound processes.
 
 ### Key Features of MLFQ:
 
@@ -31,7 +31,7 @@ MLFQ stands for "Multi-Level Feedback Queue," and it is a scheduling algorithm u
 2. **Queue Selection:**
    - The scheduler selects the highest-priority non-empty queue for execution.
 
-3. **Time Slicing:**
+3. **[[Quantum|Time Slicing]]:**
    - The selected process is given a time slice to execute. If the process completes within the time slice, it may move to a higher-priority queue; otherwise, it may be moved to a lower-priority queue.
 
 4. **Promotion and Demotion:**
@@ -46,7 +46,7 @@ MLFQ stands for "Multi-Level Feedback Queue," and it is a scheduling algorithm u
   
 - **Efficient Resource Utilization:** By dynamically adjusting priorities, MLFQ optimizes resource utilization and reduces response time for interactive tasks.
 
-- **Prevention of Starvation:** The feedback mechanism and aging prevent processes from being permanently stuck in lower-priority queues, reducing the risk of starvation.
+- **Prevention of [[Starvation]]:** The feedback mechanism and aging prevent processes from being permanently stuck in lower-priority queues, reducing the risk of starvation.
 
 ### Challenges:
 
@@ -55,3 +55,51 @@ MLFQ stands for "Multi-Level Feedback Queue," and it is a scheduling algorithm u
 - **Overhead:** The implementation of MLFQ may introduce additional overhead in terms of bookkeeping and complexity.
 
 Multi-Level Feedback Queue algorithms are widely used in modern operating systems to strike a balance between responsiveness and efficiency, accommodating a variety of application workloads.
+
+# Gaming the System
+
+In the context of Multi-Level Feedback Queue (MLFQ) scheduling, when a process "games the system," it refers to a situation where a process manipulates or exploits the scheduling algorithm to its advantage, potentially disrupting the fairness or efficiency of resource allocation. This behavior can have various implications depending on the specific characteristics of the scheduling algorithm and the actions taken by the process. Here's what it typically means:
+
+### Process Gaming the System in MLFQ:
+
+1. **Manipulating Priority Levels:**
+   - A process may intentionally alter its behavior or characteristics to influence its assigned priority level within the MLFQ. For example, a process might frequently yield or release the CPU to appear more interactive and be promoted to a higher-priority queue.
+
+2. **Exploiting Time Slicing:**
+   - Processes may attempt to exploit the time-slicing mechanism of MLFQ by performing short bursts of CPU activity followed by periods of inactivity, thereby maximizing their chances of receiving more CPU time in higher-priority queues.
+
+3. **Resource Contention Strategies:**
+   - Processes may engage in strategies to monopolize or hog system resources, such as repeatedly requesting CPU time or I/O operations, with the intention of disrupting the execution of other processes and improving their own performance.
+
+4. **Preventing Demotion:**
+   - A process might take actions to avoid being demoted to lower-priority queues, such as artificially prolonging its CPU bursts or avoiding I/O operations that could lead to demotion. This behavior can prevent fair resource allocation among processes.
+
+5. **Starvation Avoidance:**
+   - Processes may attempt to avoid starvation by exploiting the feedback mechanism of MLFQ, deliberately performing actions to trigger priority promotion and ensure continued access to CPU time, even if it negatively impacts other processes.
+
+### Implications of Process Gaming:
+
+- **Unfair Resource Allocation:**
+  - When a process games the system, it can lead to unfair resource allocation, where certain processes receive disproportionate access to system resources at the expense of others.
+
+- **Reduced System Efficiency:**
+  - Gaming the system can result in suboptimal system efficiency, as processes may engage in inefficient behaviors solely to manipulate their scheduling priority or resource allocation.
+
+- **Impact on Performance:**
+  - Process gaming can degrade overall system performance by introducing unnecessary contention, delays, or inefficiencies in resource utilization.
+
+- **Complexity in Management:**
+  - Dealing with processes that game the system adds complexity to system management and may require additional measures to mitigate their disruptive effects.
+
+### Addressing Process Gaming:
+
+- **Algorithm Adjustments:**
+  - MLFQ algorithms may need adjustments to detect and mitigate gaming behavior, such as imposing fairness constraints or introducing penalties for certain actions.
+
+- **Monitoring and Enforcement:**
+  - System administrators may implement monitoring and enforcement mechanisms to identify and address processes that exhibit gaming behavior, ensuring fair and efficient resource allocation.
+
+- **Educating Users:**
+  - Educating users about the consequences of gaming the system and promoting responsible use of system resources can help mitigate gaming behavior and encourage cooperation in resource sharing.
+
+By understanding and addressing process gaming, system administrators can maintain fairness, efficiency, and stability in resource allocation, ensuring optimal performance for all users and processes within the system.

@@ -3,9 +3,9 @@ aliases:
   - Generalization
   - Cross-Validation
 ---
-Certainly! Cross-validation is a crucial technique in machine learning for estimating the performance and generalization of a model. It helps assess how well a model will perform on new, unseen data. Here's a detailed exploration of cross-validation:
+Cross-validation is a crucial technique in machine learning for estimating the performance and generalization of a model. It helps assess how well a model will perform on new, unseen data. Here's a detailed exploration of cross-validation:
 
-### 1. **K-Fold Cross-Validation:**
+### 1. **[[K-Fold Cross-Validation]]:**
    - **Procedure:**
      - The dataset is divided into \(k\) equally sized folds.
      - The model is trained \(k\) times, each time using \(k-1\) folds for training and the remaining fold for validation.

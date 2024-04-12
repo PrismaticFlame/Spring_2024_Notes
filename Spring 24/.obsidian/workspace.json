@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Neural Networks and Machine Learning.md",
+                "file": "Study for Test 2.md",
                 "mode": "source",
                 "source": false
               }
@@ -86,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Neural Networks and Machine Learning.md",
+                "file": "Study for Test 2.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Neural Networks and Machine Learning.md",
+                "file": "Study for Test 2.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Neural Networks and Machine Learning.md"
+                "file": "Study for Test 2.md"
               }
             }
           },
@@ -139,7 +139,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -160,41 +160,41 @@
   "active": "6d71519dd77f45ab",
   "lastOpenFiles": [
     "Operating Systems.md",
-    "MLFQ.md",
-    "Pasted image 20240201103438.png",
-    "Pasted image 20240201103344.png",
-    "Round-Robin.md",
-    "Shortest Job First.md",
-    "Pasted image 20240201102307.png",
-    "Pasted image 20240201102209.png",
-    "Convoy Effect.md",
-    "Pasted image 20240201101753.png",
-    "Pasted image 20240201101616.png",
-    "Gantt chart.md",
-    "Pasted image 20240201101425.png",
-    "Scheduler.md",
-    "FIFO_FCFS.md",
-    "Discrete Time Calculations.md",
-    "Introduction To Robotics.md",
-    "Frequency Response.md",
-    "Resonance.md",
-    "State Space Equations.md",
-    "Mini-Batch Gradient Descent.md",
-    "Parallelization.md",
-    "Gradient Descent.md",
+    "Study for Test 2.md",
+    "Outliers.md",
     "Neural Networks and Machine Learning.md",
-    "Stochastic Gradient Descent (SGD).md",
-    "Epochs.md",
-    "Stopping Conditions.md",
-    "Learning Rate.md",
-    "Hyperparameter.md",
-    "Pasted image 20240131141343.png",
-    "Least Squares Estimation.md",
-    "Infinite Square Well.md",
-    "Pasted image 20240130190635.png",
-    "Pasted image 20240130190619.png",
-    "Quantum Mechanics.md",
-    "Time-Independent Schrödinger Equation.md",
+    "Round-Robin.md",
+    "Threads.md",
+    "Concurrency.md",
+    "ReLU.md",
+    "Exponential Linear Unit (ELU).md",
+    "Parametric ReLU (PReLU).md",
+    "Leaky ReLU.md",
+    "Pasted image 20240301143317.png",
+    "Pasted image 20240301143239.png",
+    "Gantt chart.md",
+    "Process Tables.md",
+    "Utilization Histograms.md",
+    "Multiprogramming.md",
+    "Basic elements.md",
+    "Fetch & Execute.md",
+    "Flat Page Table.md",
+    "Introduction To Robotics.md",
+    "Cubic Interpolation.md",
+    "hex.md",
+    "Pasted image 20240222101932.png",
+    "TLB.md",
+    "Weighted A-star Search.md",
+    "Back Propagation.md",
+    "Vanishing Gradient.md",
+    "Regularization.md",
+    "Pasted image 20240219142144.png",
+    "Pasted image 20240213095818.png",
+    "Pasted image 20240202141609.png",
+    "Pasted image 20240202141538.png",
+    "Pasted image 20240202141505.png",
+    "Pasted image 20240116101649.png",
+    "Pasted image 20240118101440.png",
     "What does the CPU do doing I",
     "I",
     "Images"

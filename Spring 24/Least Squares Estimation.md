@@ -61,7 +61,7 @@ Consider the following dataset with two variables (height and weight):
 
 $\begin{align*} \text{Height (inches):} & [65, 68, 73, 71, 70]\\\text{Weight (lbs):} & [125, 140, 160, 150, 145]\end{align*}$
 
-To find the least squares estimates for the simple linear regression model \(weight = \beta_0 + \beta_1 \times \text{height}\), the formulas for \(\hat{\beta}_0\) and \(\hat{\beta}_1\) would be used.
+To find the least squares estimates for the simple linear regression model $weight = \beta_0 + \beta_1 \times \text{height}$, the formulas for $\hat{\beta}_0$ and $\hat{\beta}_1$ would be used.
 
 ### Python Example (using NumPy):
 

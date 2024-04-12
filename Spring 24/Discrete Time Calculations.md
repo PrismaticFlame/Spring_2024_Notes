@@ -37,7 +37,7 @@ Yes, discrete-time calculations refer to computations and mathematical operation
 
    Example:
    $X(z) = \sum_{n=-\infty}^{\infty} x[n] \cdot z^{-n}$
-   Here, \(X(z)\) is the Z-transform of \(x[n]\).
+   Here, $X(z)$ is the Z-transform of $x[n]$.
 
 3. **Convolution:**
    - Convolution is a fundamental operation in discrete-time signal processing. It is used to calculate the output of a linear time-invariant (LTI) system in response to an input signal.
@@ -51,6 +51,6 @@ Yes, discrete-time calculations refer to computations and mathematical operation
 
    Example:
    $H(z) = \frac{b_0 + b_1 z^{-1} + \ldots + b_M z^{-M}}{1 + a_1 z^{-1} + \ldots + a_N z^{-N}}$
-   Here, \(H(z)\) represents the transfer function of a digital filter with coefficients \(b_0, b_1, \ldots, b_M\) and \(a_1, \ldots, a_N\).
+   Here, \(H(z)\) represents the transfer function of a digital filter with coefficients $b_0, b_1, \ldots, b_M$ and $a_1, \ldots, a_N$.
 
 Discrete-time calculations play a crucial role in digital signal processing, control systems, communication systems, and various applications where signals are quantized and processed in discrete intervals.

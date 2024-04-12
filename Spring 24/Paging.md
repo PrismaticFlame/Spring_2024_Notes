@@ -14,10 +14,10 @@ Paging is a memory management scheme used in computer operating systems to imple
 2. **[[Page Table]]:**
    - To keep track of the mapping between virtual and physical pages, the operating system maintains a data structure called the page table. The page table contains entries that map virtual page numbers to corresponding physical page numbers.
 
-3. **Page Number and Offset:**
+3. **Page Number and [[Offset]]:**
    - In the virtual address space, an address is divided into two parts: the page number and the offset within the page. The page number is used to index the page table, while the offset determines the specific location within the page.
 
-4. **Page Fault:**
+4. **[[Page Fault]]:**
    - A page fault occurs when a process attempts to access a virtual page that is not currently in physical memory. The operating system must then bring the required page into memory from secondary storage.
 
 5. **Backing Store (Swap Space):**
@@ -45,7 +45,7 @@ Paging is a memory management scheme used in computer operating systems to imple
    - **Isolation:** Each process has its own page table, ensuring isolation and preventing one process from accessing the memory of another.
 
 5. **Challenges of Paging:**
-   - **Fragmentation:** Paging helps reduce external fragmentation but can still lead to internal fragmentation within pages.
+   - **[[Fragmentation]]:** Paging helps reduce external fragmentation but can still lead to internal fragmentation within pages.
    - **Overhead:** Maintaining and updating the page table incurs overhead, and frequent page faults may impact performance.
 
 ### [[TLB]] (Translation Lookaside Buffer):

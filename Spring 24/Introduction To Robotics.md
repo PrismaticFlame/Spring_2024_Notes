@@ -308,7 +308,7 @@ $J$ - Inertia
 | $K_i$ | Decrease | Increase | Increase | Eliminate | Degrade |
 | $K_d$ | Minor Change | Decrease | Decrease | No effect in theory | Improve if $K_d$ small |
 
-## Standard Forms
+## [[Standard Forms]]
 - Control
 	- $V_c = V_{bias} + K_pe(t) + K_i\int_0^te(t)dt + K_d\dot{e}(t)$
 	- $V_c = V_{bias} + K (e(t) + \frac{1}{T_1}\int_0^te(t)dt + T_d\dot{e}(t))$
@@ -317,7 +317,7 @@ $J$ - Inertia
 
 # [[Frequency Response]]
 
-# Computers are discrete time
+# Computers are [[discrete]] time
 - Sample sensor data
 	- Takes time to process data after sensing
 - Estimate current state
@@ -328,7 +328,7 @@ $J$ - Inertia
 	- Data conversion and transmission takes time
 
 - Typical control rates of 10-1000Hz (samples per second)
-- Need discrete approximations to derivatives and integrals
+- Need [[discrete]] approximations to derivatives and integrals
 
 ## [[Discrete Time Calculations]]
 - Sample Period
@@ -339,4 +339,156 @@ $J$ - Inertia
 	- $\int_o^t e dt \approx$ 
 - Control Calculations
 
+# 2/2/24
+# Controller Tuning: Simple Approach
+- Initialize gains to 0.0
+- Increase K until system begins to oscillate at $K = K_u$
+- Measure peak-to-peak time period $T_u$
+- Set ... (Slide 12) #todo 
+- Tune for acceptable response
+	- [[Proportional Gain|Proporitonal gain]] $K_p$ speeds response and reduces error, but can cause overshoot and oscillations
+	- [[Intergral Gain]] $K_i$ reduces steady state error, but can introduce instability (oscillations)
+	- Derivative $K_d$ slows (dampens) response, but is susceptible to noise in measurement
+
+## [[Issues in Control - Saturation]]
+- Large errors may induce control calculations beyond system capabilities
+	- Avoid rollover of computer representations
+	- Beyond physical capabilities/limits (e.g. available battery voltage)
+- Clamp control output to limits
+	- $V_{applied} = \text{max} (-V_{clamp}, \text{min}(V_c, V_{clamp}))$
+	- Take care to prevent "[[Integral Windup]]"
+		- $I_k = V_{clamp} - (V_{bias}+K_pe+K_d(\frac{e_k - e_{k-1}}{\Delta t}))$
+		- Clamp $I_k$ to reasonable value
+		- Will provide smooth ("bumpless") transition as signal reenters control zone
+
+## [[Issues in Control - Stability]]
+
+### [[Phase Plots]]
+
+## [[Brockett's Theorem]]
+
+Says we can't park our robot and have it resist people moving it with PID.
+
+## Testing Small Time Local Accessibility and STLC
+
+# 2/5/24
+# "[[Pure Pursuit]]" - based [[Path Following]] 
+
+# [[Practical Decision Making for Robotics]]
+
+## [[Agents]]
+- An entity that maps its perception of its environment to an action
+- $P*$ - Percept history (collection of prior percepts)
+$$f:P* \rightarrow A$$
+- Feedback control represents an approximately continuous loop
+- How do I make "discrete" decisions?
+
+## Good Old-fashioned AI (pre-1985)
+- Sense
+- Model
+- Plan
+- Act
+
+- In this paradigm, acting is "open-loop"
+- Modeling and planning is "slow", which does not work in dynmaic environments, doesn't hndle uncertainty of actions
+
+
+---
+# Missed quite a few slides
+2/7/24, 2/9/24
+
+---
+
+# 2-line Planar Arm Reachable Workspace
+$$^RW_S \subseteq W_s$$
+
+# Obstacles in Configuration Space
+- A configuration $q$ is "collision free" or just "free" if the robot placed at $q$ does not intersect any obstacles in the workspace or itself (self collision)
+- The **free configuration space** $C_{\text{free}}$ is a subset of C-space that contains all free configs
+
+# Paths and Trajectories in C-Space
+- A path is a continuous curve in C_free that connects q_start and q_goal
+- A trajectory is path ... #todo 
+
+## Connectedness of C-Space
+- Config space C is connected if every two configs can be connected by a path
+- Config space C is simply-connected if any two paths connected the same endpoints are *[[Homotopic|homotopic]]*; that is, they can be continuously connected... #todo 
+
+# Simple Planning
+## [[Bug Algorithm]]
+## [[Potential Fields]]
+
+### Distance Contours (Level Sets)
+
+## Potential-based Utility (negative potential) Functions
+
+### Composite Utility Functions
+
+# 2/14/24
+# Techniques for finding good paths
+- "Path", not trajectory
+
+- Good?
+	- Quickest
+	- Shortest
+	- Least costly
+	- Smoothest
+	- Safest
+	- Combination
+
+## [[Grid-based Graph Search]]
+
+### [[Breadth First Search]]
+
+### [[Depth First Search]]
+
+### [[Dijkstra's Algorithm|Uniform Cost Search]]
+- Priority Queue
+	- Queue that is sorted by assigned priority
+	- Lowest path cost first
+	- Nodes = [0]
+	- Slide 34
+
+### [[Greedy (Best First) Search]] 
+
+### [[A-star Search|A* Search]]
+## Graph Theory Review
+- Edges = Connections
+- Node = Vertex
+	- has a "State"
+- In our case, each node represents a small region of the plane $R^2$ 
+
+## Tree Search
+$b$ is the branching factor
+$d$ is depth of tree at goal
+$m$ is maximum depth
+
+### [[Breadth First Search]]
+- Needs completeness, time complexity of $b^d$, and a memory complexity of the same, and has optimality
+
+### [[Depth First Search]]
+- Does not need completeness, has a time complexity of $b^m$, and memory complexity of $b \cdot m$ 
+
+### [[Dijkstra's Algorithm|Uniform Cost Search]]
+- Needs completeness (assuming finite b and potentially unlimited d)
+
+### [[Greedy (Best First) Search]] 
+
+### [[A-star Search|A* Search]]
+
+### [[Weighted A-star Search |Weighted A* Search]]
+- If $h' = \epsilon h^*$ for $\epsilon > 1.0$
+
+**"Anytime"**
+- Consider a car traveling 60mph = 26.8m/s
+- In 0.1 seconds, car will travel 2.68 meters, or about $\frac{1}{2}$ car length
+- Let's say we want our autonomous vehicle to update it steering path every 0.1 seconds (10Hz)
+	- Using an $\epsilon = 5$, we can find a sub optimal path in 0.03 (30 milliseconds)
+		- Guaranteed no worse that 5* optimal cost
+	- Dropping $\epsilon = 2$ and re-using some prior calcs
+		- we can find a (potentially) better path in 30ms
+	- In remaing 40ms, we can drop $\epsilon = 1$ and try to find a guaranteed optimal path (according ot our model), if not, we just use the btes path found so far
+
+
+# [[Cubic Interpolation]]
 

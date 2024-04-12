@@ -496,3 +496,252 @@ $$\theta_{new} = \theta - \eta \frac{1}{n}X^T(\hat{Y} - Y)$$
 ## Least Squares Estimation (Analytical)
 $$\theta = (X^TX)^{-1}X^TY$$
 
+# [[Polynomial Regression]]
+- What about when our data is not linearly related?
+	- We can perform polynomial regression
+- The degree of a polynomial indicates the number of degrees of freedom it has
+	- The number of inflection points
+	- Its ability to bend
+
+- If we don't know how the data is related, we have to guess what degree of polynomial to fit
+	- This is typical
+
+- Prone to overfitting the data
+- Numerically unstable
+	- Huge fluctuations from small weight changes
+- Non-loca relationship fluctuations
+
+## High Degree Polynomials
+- Non-local fluctuations mean that its unpredictable beyond observed
+- The higher the degree, the more the problem
+
+## Choosing the Degree
+- Use a grid search and cross-validation
+- Choose the polynomial degree that has the best average validation performance
+- Cross-validation should help your detect overfitting and numerical instability
+
+## [[Hypersurfaces]]
+- Linear regression is linear per dimension and forms a hyper-plane
+
+- Polynomial regression is polynomial per dimension
+	- e.g. for a polynomial of degree 3 and a sample with 3 features (and a bias)
+
+## Polynomial Regression Math
+Consider regressoin using the mean squared error as a loss function
+
+## [[Z-Scaling]]
+It is sometimes best to standarize data using covariance
+- Since learning rate is shared across all dimensions it makes the learning rate relative to feature scaling consistent across dimensions
+- It can help with numerical instability issues for polynomial regression
+Z-Scaling:
+- Convert a value ($x$) to standard scaled value ($z$)
+	- Subtract out the mean ($\mu$) and divide by the standard deviation ($\sigma$)
+
+## Question
+- We have data with 4 features
+- We apply a polynomial basis function of degree 10 and add a bias
+<mark style="background: #FFB86CA6;">What is the dimensionality of our new X matrix?</mark> <mark style="background: #BBFABBA6;">41</mark> (10 degrees per feature + 1 bias)
+<mark style="background: #FFB86CA6;">How many inflection points can our curve have?</mark> <mark style="background: #BBFABBA6;">9</mark> 
+
+# Small Review
+## [[Overfitting]]
+- Saw it was easy to overfit data with polynomial regression
+- Reduces generalizability of model
+- Overfitting relates to training error decreasing at the expense of model generalization
+## [[Overtraining|Generalization]] and [[Overfitting]]
+- Generalization is the goal
+	- Maximize mdoel's performance on novel data
+- Training error reports performance with respect to seen data
+- Training error is often optimistic with respect to novel data
+
+## How to prevent overfitting
+- Use cross validation to tune hyperparamters
+- Regularization
+- Other methods
+	- Early stopping
+	- Dropout
+## [[Underfitting]]
+- Too simple of a fit to a model
+- Model has too much bias and is therefore not sensitive enough to the data
+
+# [[Regularization]]
+
+- We redefine the loss function to account for both training error (how well we fit the sampled data) and model complexity
+$$Loss = Error + \lambda * Complexity$$
+$\lambda$ is a hyperparameter that weights the trade-off between training error and complexity
+
+# [[L2 Regularization]]
+$$J(\theta) = Error + \lambda \theta^T \theta$$
+• L2 Regularization estimates complexity as the squared sum of weight values 
+• This is the squared L2 Norm of the weight vector
+- Recall the $L_2$ norm is: $$L_2Norm = \sqrt{\sum_{i=1}^d(\theta_i)^2}$$
+
+- $L_2$ Norm is also known as the Euclidean norm
+- With $L_2$ regularization the $L_2$ Norm is squared for computational simplicity
+
+# [[Ridge Regression]]
+- Ridge Regression is regression that uses mean squared $L_2$ error and $L_2$ regularization. Therefore, the loss function is:$$J(\theta) = \frac{1}{n}(Y-X\theta)^T(Y-X\theta)+\lambda \theta^T\theta$$
+
+---
+Missed a few slides
+---
+#todo 
+
+---
+
+# [[Maximum Likelihood Estimate]]
+
+## Maximum Likelihood Estimate Matrix Form
+
+## Calculating the Maximum Likelihood Estimate 
+
+## Calculating the Maximum Likelihood Estimate with Linear Function
+
+## MLE is Flexible
+$$L(Y|X, \theta) = \prod_{i=1}^n p(y_i|x_i, \theta)$$
+
+## Bernoulli Distribution
+## [[Logistic Regression with MLE]]
+
+# Binary Cross Entropy
+
+## Normalized Binary Cross Entropy
+
+## Matrix Form
+
+# [[Neurons]]
+
+# [[Back Propagation]]
+
+# Different Activation Functions
+- You can use different activation functions for hidden layers with minimal changes to the back propagation algorithm
+	- Activation Functions should be differentiable for the chain rule to work
+	- Activation Functions should have derivatives that are easy to calculate for efficiency
+
+
+## [[Vanishing Gradient]] Problem
+
+## Tanh function
+$$f(x) = tanh(x) = \frac{2}{1+e^{-2x}}-1$$
+- tanh function is often used instead of logistic
+- Unlike logistic, its range is -1 to 1. This is a greater range meaning that it is often steeper
+	- This it has a higher gradient which can reduce the vanishing gradient problem
+
+## [[ReLu]] Function
+- Just like tanh and logistic, ReLu is nonlinear, so it can be used nonlinear regression problems
+- Not truly differentiable, but differentiable in practice
+	- If input <= 0, derivative is 0, else derivative is 1
+- Benefits:
+
+
+# Optimization Algorithms
+- Optimization algorithms define how you update at each step
+- All optimization algorithms work "like gradient descent"
+	- You are searching a space defined by weights and loss
+	- You move in the direction of the derivative
+- Each algorithm
+	- Different claims on how they overcome challenges in the optimization function
+
+## Common Optimization Algorithms
+These algorithms use batch-based updates
+The differences between them are technical and aren't important
+- Gradient Descent
+- Gradient Descent with Momentum
+- RMS Prop
+- AdaGrad
+- Adam (ADaptive MOment optimizer)
+
+# Data Balance
+**Breast Cancer Dataset**
+- 458 benign and 241 malignant
+- Fairly balanced, ~2 to 1 class balance
+**Iris Dataset**
+- 50 of each flower (3 flowers)
+- Perfect 1 to 1 to 1 balance
+
+
+| Relationship | Definition | Example |
+| ------------ | ---------- | ------- |
+| TrIP         |            |         |
+| TrWP         |            |         |
+| TrCP         |            |         |
+| TrAP         |            |         |
+| TrNAP        |            |         |
+| TeRP         |            |         |
+| TeCP         |            |         |
+| PIP          |            |         |
+
+# Machine Learning Process
+- Training is only a small part of machine learning
+- Data collection, feature engineering, developing a model, and model refinement take most of your time
+
+Mainly collecting, cleaning, and organizing data takes a lot of time
+
+## Dealing with Data
+- Data Collection
+	- Identify data sources, collect, and extract the data into some useable format
+- Data Cleaning
+	- Imputing missing values, removing outliers, normalizing data, removing invalid samples, etc..
+- Feature Engineering (feature extraction)
+	- Creating informative features from the cleaned data
+- Feature Selection
+	- Selecting (or removing) features that are helpful for your end-goal
+
+### Breast Cancer Dataset
+Collect and digitize images of a fine needle aspirate (FNA) of a breast mass
+Ensure all images are valid (no problems with imaging or digitization)
+
+1. Identify cell nuclei boundaries
+2. Characterize nuclei in terms of: radius, perimeter, area, compactness, smoothness, concavity, concave points, symmetry, dimension, and texture
+
+Scale feature values between 1 and 10
+
+From the 10 features, select a set of 4 informative features by trying different combinations and seeing which gives best test set performance
+
+## Data Collection
+
+## Data Cleaning
+
+## Data Cleaning: Imputation
+
+
+
+
+# Weak Learning
+Are many simple learners better than a single complex learner?
+
+They can be, because it can prevent overfitting
+
+Ensemble methods are ways to combine the results of many learners, typically weak learners
+1. Stacking
+2. Bagging
+3. Boosting
+
+• Weak Learner – a classification or regression algorithm that performs poorly. Usually (but not strictly) they are computationally simply. Weak learners typically are less prone to overfitting 
+• Ensemble Method – a method to combine the outputs of different algorithms. Ensemble methods hope to lessen the potential for overfitting 
+• Stacking – an ensemble method that uses the outputs of classifiers as input into another classifier 
+• Bagging – an ensemble method that uses bootstrap sampling to generate many models on a dataset
+• Boosting – an ensemble method in which classifiers are applied sequentially, and the prediction performance of one classifier affects how the next classifier is built
+
+# Ensemble Methods
+## Stacking
+- Several model outputs are input into another model
+- Ensemble methods can be used with any learner
+	- It doesn't have to be a weak learner
+
+
+# Project 3 Ideas
+- Spending variance per customer
+	- Customer typically spends between $100-$500, if they spend $10,000 something is wrong
+- Time of day (morning, afternoon, evening, night)
+- Time between transactions
+- Transactions on the weekend (didn't really add performance)
+- CVV Match
+	- Input vs. Actual CVV (Didn't do much apparently?)
+- F1 Score as a function of Threshold
+	- Messing with threshold?
+- SMOTE/Undersampling
+	- Split data into buckets, then undersample the bucket
+- PCA
+	- I don't really get this
+- XGBoost

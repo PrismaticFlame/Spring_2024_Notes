@@ -1,4 +1,8 @@
-In the context of scheduling algorithms, a "quantum" refers to the time duration or time slice assigned to each process for execution on the CPU. The quantum is a fundamental parameter in preemptive scheduling algorithms, particularly in algorithms like Round-Robin. Here's a more detailed explanation of the quantum:
+---
+aliases:
+  - Time Slice
+---
+In the context of scheduling algorithms, a "quantum" refers to the time duration or time slice assigned to each process for execution on the [[CPU]]. The quantum is a fundamental parameter in preemptive scheduling algorithms, particularly in algorithms like [[Round-Robin]]. Here's a more detailed explanation of the quantum:
 
 ### 1. **Definition:**
 

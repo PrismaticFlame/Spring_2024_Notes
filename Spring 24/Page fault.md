@@ -3,7 +3,7 @@ aliases:
   - Interrupts
   - Interrupt
 ---
-Certainly! A page fault is an interrupt that occurs when a program attempts to access a region of virtual memory that is mapped to physical memory, but the corresponding page is not currently in RAM (Random Access Memory). Page faults are a normal and essential part of virtual memory management, allowing operating systems to efficiently use physical memory while accommodating larger address spaces than the available RAM. Here's a detailed explanation of page faults:
+A page fault is an interrupt that occurs when a program attempts to access a region of virtual memory that is mapped to physical memory, but the corresponding page is not currently in RAM (Random Access Memory). Page faults are a normal and essential part of virtual memory management, allowing operating systems to efficiently use physical memory while accommodating larger address spaces than the available RAM. Here's a detailed explanation of page faults:
 
 ### 1. **Background:**
 

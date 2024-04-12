@@ -5,7 +5,7 @@ aliases:
   - Memory Management
   - Paging
 ---
-Certainly! The Translation Lookaside Buffer (TLB) is a hardware cache that stores a subset of page table entries, accelerating the virtual-to-physical address translation process in a computer's memory management unit (MMU). TLBs are essential for improving the speed of memory access in systems that use virtual memory. Let's explore the details of the TLB:
+The Translation Lookaside Buffer (TLB) is a hardware cache that stores a subset of page table entries, accelerating the virtual-to-physical address translation process in a computer's memory management unit (MMU). TLBs are essential for improving the speed of memory access in systems that use virtual memory. Let's explore the details of the TLB:
 
 ### 1. **Purpose of TLB:**
 

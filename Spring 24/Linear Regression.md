@@ -99,3 +99,28 @@ In this example, a simple linear regression model is trained on synthetic data u
 ![[Pasted image 20240129141821.png]]
 
 ![[Pasted image 20240129142255.png]]
+
+# Regression Context
+
+In the context of regression, the "original loss" refers to the loss function used in the standard linear regression model, which is often the mean squared error (MSE). The goal of linear regression is to find the values for the coefficients that minimize the sum of squared differences between the predicted values and the actual values in the training data.
+
+The mean squared error for linear regression is defined as:
+
+$\text{MSE} = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2$
+
+Here:
+- \( n \) is the number of data points,
+- \( y_i \) is the actual target value for the i-th data point,
+- \( \hat{y}_i \) is the predicted target value for the i-th data point.
+
+In the context of ridge regression, the original linear regression objective function is modified by adding a regularization term to the mean squared error. The ridge regression objective function becomes:
+
+$J(\theta) = \text{MSE} + \lambda \sum_{i=1}^{n} \theta_i^2$
+
+Here:
+- \( J(\theta) \) is the new objective function with Ridge regularization,
+- \( \text{MSE} \) is the mean squared error term from the original linear regression,
+- \( \lambda \) (lambda) is the regularization parameter,
+- \( \sum_{i=1}^{n} \theta_i^2 \) is the sum of the squared coefficients (excluding the intercept term).
+
+The purpose of adding the regularization term is to penalize large values of the coefficients, preventing overfitting and improving the generalization performance of the model. The trade-off between fitting the training data well and keeping the model simple is controlled by adjusting the regularization parameter \( \lambda \).

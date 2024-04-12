@@ -3,7 +3,7 @@ aliases:
   - Paging
   - Memory
   - Memory Management
-  - Page Table
+  - Page Tables
 ---
 Certainly! Page tables are a crucial component of virtual memory systems in computer operating systems. They serve as a data structure that maps virtual addresses used by processes to corresponding physical addresses in the computer's physical memory. The use of page tables allows the operating system to provide each process with its own virtual address space, which may be larger than the available physical memory.
 
