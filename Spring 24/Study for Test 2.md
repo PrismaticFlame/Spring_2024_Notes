@@ -224,3 +224,516 @@ Cons?
 Options 2: Thread
 
 Threads are like processes, except: multiple threads of same process share an address space
+
+Divide large task across several cooperative threads
+
+Communicate through shared address space
+
+### Common Programming Models
+Multi-threaded programs tend to be structured as:
+- **Producer/Consumer**: multiple producer threads create data (or work) that is handled by one of the multiple consumer threads
+- **Pipeline**: Task is divided into series of subtasks, each of which is handled in series by a different thread
+- **Defer work with background thread**: one thread performs non-critical work in the background (when CPU idle)
+
+![[threads_stack_pointers.png]]
+
+
+### Thread vs. Process
+Multiple threads within a single process share:
+- Thread Group ID (TGID)
+- Address space
+	- Code (instructions)
+	- Most data (heap)
+- Open file descriptors
+- current working directory
+- user and group id
+
+Each thread has its own
+- Process ID (PID)
+- Set of registers, including Program counter and stack pointer
+- Stack for local variables and return addresses (in same address space)
+
+### Thread API
+Variety of thread systems exist
+- POSIX Pthreads
+Common thread operations
+- Create
+- Exit
+- Join (instead of wait() for processes)
+
+### OS Support: Approach 1
+User-level threads: Many-to-one thread mapping 
+• Implemented by user-level runtime libraries 
+	• Create, schedule, synchronize threads at user-level 
+• OS is not aware of user-level threads 
+	• OS thinks each process contains only a single thread of control 
+Advantages 
+• Does not require OS support; Portable 
+• Can tune scheduling policy to meet application demands 
+• Lower overhead thread operations since no system call 
+Disadvantages? 
+• Cannot leverage multiprocessors 
+• If one thread blocks they all block 
+
+### OS Support: Approach 2
+Kernel-level threads: One-to-one thread mapping 
+• OS provides each user-level thread with a kernel thread 
+• Each kernel thread scheduled independently 
+• Thread operations (creation, scheduling, synchronization) performed by OS Advantages 
+• Each kernel-level thread can run in parallel on a multiprocessor 
+• When one thread blocks, other threads from process can be scheduled 
+
+### Aside: Linux Processes and Threads
+Linux treats threads as processes
+	Parent process pid == tgid
+	Launched threads have new pid and **Parents** tigd
+	So scheduler sees different pids (for scheduling)
+	But same tgid means don't swap memory if swapping to same tgid
+
+### Aside: HTOP
+Also means you can just show processes (not their internal threads) by displaying tgid only
+Show how HTOP tracks processes and threads
+	F2 to setup columns (PID, TGID)
+	Show tree view (display options -> to see parent process)
+
+### [[Timeline View (of Thread SchedulE #2)]]
+
+### Non-Determinism
+Concurrency leads to non-deterministic results
+- Not deterministic result: different results even with same inputs
+- race conditions
+
+Whether bug manifests depends on CPU schedule!
+
+Passing test means little
+
+How to program: imagine scheduler is malicious
+Assume scheduler will pick bad ordering at some point...
+
+
+### Conclusions
+Concurrency is needed to obtain high performance by utilizing multiple cores
+
+Threads are multiple execution streams within a single process or address space (share PID and address space, own registers and stack)
+
+Context switches within a critical section can lead to non-deterministic bugs (race conditions)
+
+Use locks to provide mutual exclusion
+
+## Threads (pt 2)
+Race conditions, atomic variables, critical sections
+
+### Race Conditions
+- Launch 2 threads, the outcome depends on which finishes first
+	- Spurious, tough to reproduce (may need exacting set of conditions)
+	- Because of this non-determinism they are Tough to debug
+![[race_conditions_1.png]]
+
+```C++
+global2++;
+--global2;
+```
+So, is this atomic?
+
+==No, it's three interruptible machine instructions==
+![[race_conditions_2.png]]
+
+**Ok make it atomic**
+
+Go from this
+```C++
+#include <thread>
+
+using namespace std;
+const int NUMB_TIMES = 100000;
+
+//global variable
+int global2 = 0;
+```
+
+To this
+```C++
+#include <thread>
+#include <atomic>
+
+using namespace std;
+const int NUMB_TIMES = 100000;
+
+//atomic variable
+std::atomic<int> global2(0);
+```
+
+==Atomic types are types that encapsulate a value whose access is guaranteed to not cause data races and can be used to synchronize memory accesses among different threads.==
+
+**But...**
+- Atomic protect single lines of code only.
+- What if you have 3 lines that must be uninterruptable?
+
+```C++
+//starting balance
+int bal = 50;
+
+void withdrawmoney(int amt) {
+	if (bal>amt) {
+		//What happens if you are interrupted right after the if conditional 
+		//check
+		//Will not help to make bal an atomic (why?)
+		cout<<"approved!"<<endl;
+		bal -= amt;
+		//What is needed is to make these three lines uninterruptable
+		//We call this a "critical section"
+	}
+	else
+		cout<<"denied!";
+}
+
+int main() {
+	thread t1(withdraw, 40);
+	thread t2(withdraw, 25);
+}
+```
+
+Critical Section: Code that accesses a shared resource, that must complete without interruption. BTW make them as small as possible
+Question: Can you have a critical section in a single threaded environment? ==No==
+
+### Critical Section
+- Critical Section: Code that accesses a shared resource, where only 1 thread can be at at time.
+- Make them as small as possible! Why? Because in the critical section you potentially go from a multithreaded application, to a single threaded application where the other threads are blocked waiting to get in.
+
+Where are critical sections in the following code?
+```C++
+int g=0;
+
+void fun(){
+	g++;
+}
+
+int main(){
+	thread t1(fun);
+	
+	int i =g;
+	
+	i++;
+	
+	g = i;
+	
+	t1.join();
+}
+```
+
+```C++
+int g=0;
+
+void fun(){
+	g++;
+}
+
+int main(){
+	//thread t1(fun); What about if no threads?
+	
+	int i =g;
+	
+	i++;
+	
+	g = i;
+	
+	//t1.join();
+}
+``` 
+*If no threads, then single threaded. no critical sections*
+
+```C++
+int g=0;
+
+void fun(){
+	int a = g;
+}
+
+int main(){
+	thread t1(fun);
+	
+	int i =g;
+	
+	i++;
+	
+	g = i; //1
+	
+	t1.join();
+}
+```
+If fun() just reads g?
+g is being written at *1* If 1 write then all reads and writes need protection
+These are the critical sections
+
+```C++
+int a = g;
+```
+
+&
+
+```C++
+int i = g;
+
+i++;
+
+g=i;
+```
+
+Will these smaller critical sections work (note fun changes)?
+
+```C++
+int g = 0;
+
+void fun() {
+	g++;//<---
+}
+
+int main(){
+	thread t1(fun);
+	
+	int i = g;//<---
+	
+	i++;
+	
+	g = i;//<---
+	
+	t1.join();
+}
+```
+
+==NO==
+In main thread, if *i* receives *g*, then increment *i*, then *t1* changes g, then main thread writes *i* back to *g*? Answer: you overwrite *t1*s changes
+
+![[threads_starts_diff.pdf]]
+
+**BTW... When only reading global variables**
+- If all you do is read a global variable, then there is no critical section and no need to protect access to the global variable
+- BUT, if you write a global variable at all. Even if just 1 write and 10000 reads.
+- Then all 10001 operations are critical and all 10001 must be protected.
+```C++
+//A global int
+int i = 0;
+
+//Thread 1
+int j = i ;
+
+//Thread 2
+int k = i;
+```
+
+### [[Race Condition again - what happens here]]
+```C++
+#include <iostream>
+#include <thread>
+
+void doZero(){}
+void doNotZero(){}
+
+int global=2;
+void fun(){
+	if(global==0)
+		doZero();
+	else
+		doNotZero();
+}
+
+int main(){
+	std::thread t1(fun);
+	global=0;
+	t1.join();
+	return 0;
+}
+```
+
+### Summary
+- Race conditions - where they occur, learn to recognize them
+- Atomics and problems they solve (single line only)
+- Critical Sections - an area of code where only 1 thread can be at a time. Learn how to recognize them, make them small (since only one thread should be in them at a time)
+	- Question - if you launch no threads, can you have critical sections?
+	- Question - if you only read global variables, can you have critical sections?
+
+# Week 10, 11
+
+## Mutual Exclusion (Mutex)
+Protects critical sections that are longer than 1 line
+
+- Enforcement
+	- Only 1 thread in a critical section at a time
+- Availability
+	- If no thread in critical section, then any thread can enter
+- Minimal Stay
+	- Threads stay in critical section for minimal time
+- Consistency
+	- If resource must be protected anywhere, then it must be protected everywhere
+
+### What it does
+```C++
+int balance = 60;
+
+void withdraw(int amt) {
+
+	if(balance > amt) { //64
+		cout<<"approved"<<endl;
+		balance -= amount; //66
+	}
+}
+
+int main(){
+	thread t1(withdraw, 40);
+	thread t2(withdraw, 25);
+	t1.join();
+	t2.join();
+}
+```
+
+As written, there is a chance that a thread will be interrupted After line 64 but before line 66 executes.
+In this case the result will likely be an overdrawn account
+
+We want to ensure that doesn't happen!
+
+First: Identify minimal critical section(s)
+```C++
+if(balance > amt) {
+		cout<<"approved"<<endl;
+		balance -= amount;
+	}
+```
+
+Next: protect critical section(s) with a mutex
+```C++
+mutex m;
+void withdraw(int amt) {
+	m.lock();//63, t2 is blocked here
+	if(balance > amt) {
+		cout<<"approved"<<endl; //<--- t1, line 65
+		balance -= amount;
+	}
+	m.unlock();//68
+}
+```
+
+Only 1 thread can be executing code between lines 63 and 68 at a time.
+
+Assume t1 is executing line 65
+t2 is likely blocked at line 63, waiting for t1 to finish executing line 68.
+Once t1 executes line 68, t2 is free to acquire the mutex and proceed
+
+### How to implement
+- Hardware enforced
+	- Disable interrupts
+	- Guarantees atomic code because your code cannot be interrupted
+- But...
+	- Cannot have overlapping critical sections
+	- Cannot switch to other, non-related, processes
+	- Will not work on multi-core system unless you disable interrupts on all cores (big performance hit)
+	- Kills performance on core
+- So... cannot use disabled interrupts solution
+
+```C++
+//a special atomic function
+int compare_and_swap(int *word, int notlockedval, int lockedval){
+	//save original
+	int oldval=*word;
+
+	if(oldval==notlockedval){ //if we can
+		*word=lockedval;      //then do
+	}
+	return oldval;
+}
+
+const int notlockedval=0;
+const int lockedval=1;
+
+int word=notlockedval; //start unlocked
+
+void withdraw(int amt){
+
+	//stay in below loop until compare_and_swap returns lockedval
+	while(compare_and_swap(&word,notlockedval, lockedval ) == lockedval{}
+	if(balance > amt){
+		cout<<"approved"<<endl;
+		balance-=amount;
+	}
+	word=notlockedval;
+}
+```
+
+Compare and Swap - an atomic operation (once started cannot be interrupted)
+1. 1st thread => `word=notlockedval` => line 19 returns false, go to 20
+2. 1st thread => interrupted at line 21
+3. 2nd thread => line 19 returns true, so it busy waits (spins) burning CPU time
+4. 1st thread swapped back and finishes, line 24 set word=notlockedval
+5. 2nd thread swapped back, line 19 returns false, goes to 20 and finishes
+
+Compare and Swap
+- Good
+	- Simple
+	- Easily verified
+	- Multiprocessor/multiprocess as long as can share memory
+- Bad
+	- Busy wait (line 19) must keep checking until available, CPU usage spikes, see Spinlock project
+	- Starvation and Deadlock both possible
+	- Compare_and_swap has to be atomic, this C++ code is not
+
+### Using implementation in C++ 11
+- Mutexes are thread based in C++ 11, not process based!
+```C++
+#include <mutex>
+std::mutex g_mutex;        //generally a global value
+
+g_mutex.lock();            //if available then proceed, otherwise thread blocks
+g_mutex.unlock();          //unlocks the mutex, other waiting threads can acquire
+```
+
+General rules
+- Unlock a mutex when you are done (else waiting threads will wait forever)
+- Do not lock() a mutex twice from same thread without intermediate unlock(). Otherwise thread will block waiting to acquire a mutex that it has.
+
+### Solve withdrawal problem
+```C++
+std::mutex mymutex;
+void withdraw(int amt){
+
+	mymutex.lock();
+	if(balance > amt) {
+		cout<<"approved"<<endl;
+		//what if an exception is thrown in here?
+		balance-=amount;
+	}
+	mymutex.unlock();
+}
+```
+
+If at the commented line an exception is thrown
+- You will never unlock the mutex
+- All threads waiting to enter the critical section will be blocked forever
+- Process will never join() those threads
+- Process will be blocked forever
+- Have to kill and restart process
+
+### A better idea
+- Use a self unlocking mutex - as soon as the mutex goes out of scope it unlocks.
+```C++
+std::mutex mymutex;
+void withdraw(int amt){
+
+	lock_guard<std::mutex> lock(mymutex); //locks mymutex here
+	if(balance > amt) {
+		cout<<"approved"<<endl;
+		//BUT WAIT - what if an exception is thrown in here?
+		balance-=amount;
+	}
+	//unlocks mymutex here when the lock_guard goes out of scope
+}
+
+lock_guard<std::mutex> lock(mymutex);
+```
+
+No worries! the `lock_guard` will unlock as soon as it goes out of scope
+
+### Summary
+- Mutexes function as a traffic cop, they allow 1 thread in a critical section at a time, other threads are blocked.
+- Prefer a lock_guard over a raw mutex since it automatically unlocks when it goes out of scope
+- To use: Identify minimal critical sections, then wrap critical section with an auto unlocking lock_guard
+- Mutexes are going to be global variables, they will NOT be local variables
+
