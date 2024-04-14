@@ -149,9 +149,19 @@
   },
   "active": "ac8f882b9b99e13c",
   "lastOpenFiles": [
+    "Spring 24/prod_cons_4.png",
+    "Spring 24/prod_cons_4.png.crdownload",
+    "Spring 24/prod_cons_3.png",
+    "Spring 24/prod_cons_3.png.crdownload",
+    "Spring 24/prod_cons_2.png",
+    "Spring 24/prod_cons_2.png.crdownload",
+    "Spring 24/prod_cons_1.png",
+    "Spring 24/prod_cons_1.png.crdownload",
+    "Thread Ticket Agent Slides.md",
+    "Spring 24/thread_ticket_agent.pdf",
+    "Spring 24/Study for Test 2.md",
     "Race Condition again - what happens here.md",
     "Spring 24/threads_race_condition_again.pdf",
-    "Spring 24/Study for Test 2.md",
     "Spring 24/threads_starts_diff.pdf",
     "Spring 24/race_conditions_2.png",
     "Spring 24/race_conditions_2.png.crdownload",
@@ -160,13 +170,9 @@
     "Timeline View (of Thread SchedulE.md",
     "Spring 24/[537] Threads.pdf",
     "Spring 24/threads_stack_pointers.png",
-    "Spring 24/threads_stack_pointers.png.crdownload",
     "Spring 24/Symmetric Multi-Processors.md",
     "Spring 24/array_iterator.png",
     "Spring 24/TLBexample_with_asid.png",
-    "Spring 24/TLBAccess_sequential_example.png",
-    "CPSC472/hw7-arm-planning-s24",
-    "CPSC472/hw6-s24",
-    "CPSC472/hw5-control-demo-s24"
+    "Spring 24/TLBAccess_sequential_example.png"
   ]
 }

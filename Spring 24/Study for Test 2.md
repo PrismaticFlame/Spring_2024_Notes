@@ -737,3 +737,460 @@ No worries! the `lock_guard` will unlock as soon as it goes out of scope
 - To use: Identify minimal critical sections, then wrap critical section with an auto unlocking lock_guard
 - Mutexes are going to be global variables, they will NOT be local variables
 
+## [[Thread Ticket Agent Slides]]
+
+
+## Deadlock
+(and how you will likely encounter it)
+
+- Classic Deadlock Definition
+	- 2 threads - each have a resource that the other wants
+
+```C++
+mutex m1;
+mutex m2;
+void f1(int i) {
+	while(i > 0){
+		lock_guard<mutex> lg1(m1);
+		//if t1 is interrupted here
+		lock_guard<mutex> lg2(m2);
+	}
+}
+
+void f2(int i){
+	while(i > 0){
+		lock_guard<mutex> lg1(m2); //mutexes acquired out of order
+		//then t2 runs and is interrupted here
+		lock_guard<mutex> lg2(m1);
+	}
+}
+
+int main(){
+	//the threaded way with 2 mutexes
+	thread t1(f1, NUMB_TIMES);
+	thread t2(f2, NUMB_TIMES);
+	t1.join();
+	t2.join();
+}
+```
+
+After the two interrupts, the program will stop making forward progress
+*Demo: simple_deadlock project*
+
+To fix: always acquire lock objects in same order
+
+### Possible Solution
+```C++
+//the prevention lock is used to protect
+//critical sections wehre locks are being acquired
+prevention.lock();
+
+//then acquire all necessary locks
+//knowing that no other thread can be
+//in a critical section protected by
+//the prevention lock
+l1.lock();
+l2.lock();
+
+prevention.unlock();
+
+//grab this lock first
+prevention.lock();
+
+l2.lock(); //ordering does not matter now
+l1.lock(); //given the prevention lock
+
+prevention.unlock();
+```
+
+- Put all lock acquisition in critical sections
+- Good
+	- Cannot be interrupted while acquiring locks
+
+- Bad
+	- Additional lock (prevention) to manage
+	- Have to know ahead of time what locks we need
+	- Decreases concurrency as we are likely acquiring locks early. Critical sections are larger than needed
+
+- But probably about as good as it will get
+
+### Things that act like deadlock
+```C++
+mutex m;
+void fun2(){
+	m.lock();
+}
+void fun1(){
+	m.lock();
+	fun2();
+}
+int main(){
+	//superficial blocking? Its actually undefined
+	//from the C++ 11 standard
+	//30.4.1.2.1/4 [Note: A program may deadlock if the thread that owns
+	// a mutex object calls lock() on that object.]
+	//it MAY, or it may not block. It may work on 1 compiler and not another
+	m.lock();
+	m.lock(); //This causes thread to block and wait to acquire a lock that it
+			  //already owns
+	//the way locking twice without really happens
+	fun1(); //This is how it happens in real code
+}
+```
+
+- Locking twice on the same thread without an intervening unlock
+
+### Deadlock - the real world
+- Locking is not so simple, especially if you have more than 1 lock
+- Locks are spread out among classes, functions and libraries with many conditional satements
+- Its often hard to see what the lock ordering will be
+- Once a program deadlocks it stops, it does not consume processor cycles, or any more memory than it had when the deadlock occurred. But it will never exit. It must be killed and restarted
+
+
+# Week 12, 13
+
+## Condition Variable - Website
+`std::condition_variable` is a synchronization primitive used with a [std::mutex](https://en.cppreference.com/w/cpp/thread/mutex "cpp/thread/mutex") to block one or more threads until another thread both modifies a shared variable (the _condition_) and notifies the `std::condition_variable`.
+
+The thread that intends to modify the shared variable must:
+
+1. Acquire a [std::mutex](https://en.cppreference.com/w/cpp/thread/mutex "cpp/thread/mutex") (typically via [std::lock_guard](https://en.cppreference.com/w/cpp/thread/lock_guard "cpp/thread/lock guard")).
+2. Modify the shared variable while the lock is owned.
+3. Call [notify_one](https://en.cppreference.com/w/cpp/thread/condition_variable/notify_one "cpp/thread/condition variable/notify one") or [notify_all](https://en.cppreference.com/w/cpp/thread/condition_variable/notify_all "cpp/thread/condition variable/notify all") on the `std::condition_variable` (can be done after releasing the lock).
+
+Even if the shared variable is atomic, it must be modified while owning the mutex to [correctly](https://stackoverflow.com/questions/38147825/) publish the modification to the waiting thread.
+
+Any thread that intends to wait on a `std::condition_variable` must:
+
+1. Acquire a [std::unique_lock](http://en.cppreference.com/w/cpp/thread/unique_lock)<[std::mutex](http://en.cppreference.com/w/cpp/thread/mutex)> on the mutex used to protect the shared variable.
+2. Do one of the following:
+
+1. Check the condition, in case it was already updated and notified.
+2. Call [wait](https://en.cppreference.com/w/cpp/thread/condition_variable/wait "cpp/thread/condition variable/wait"), [wait_for](https://en.cppreference.com/w/cpp/thread/condition_variable/wait_for "cpp/thread/condition variable/wait for"), or [wait_until](https://en.cppreference.com/w/cpp/thread/condition_variable/wait_until "cpp/thread/condition variable/wait until") on the `std::condition_variable` (atomically releases the mutex and suspends thread execution until the condition variable is notified, a timeout expires, or a [spurious wakeup](https://en.wikipedia.org/wiki/Spurious_wakeup "enwiki:Spurious wakeup") occurs, then atomically acquires the mutex before returning).
+3. Check the condition and resume waiting if not satisfied.
+
+or:
+
+1. Use the predicated overload of [wait](https://en.cppreference.com/w/cpp/thread/condition_variable/wait "cpp/thread/condition variable/wait"), [wait_for](https://en.cppreference.com/w/cpp/thread/condition_variable/wait_for "cpp/thread/condition variable/wait for"), and [wait_until](https://en.cppreference.com/w/cpp/thread/condition_variable/wait_until "cpp/thread/condition variable/wait until"), which performs the same three steps.
+
+`std::condition_variable` works only with [std::unique_lock](http://en.cppreference.com/w/cpp/thread/unique_lock)<[std::mutex](http://en.cppreference.com/w/cpp/thread/mutex)>, which allows for maximal efficiency on some platforms. [std::condition_variable_any](https://en.cppreference.com/w/cpp/thread/condition_variable_any "cpp/thread/condition variable any") provides a condition variable that works with any [BasicLockable](https://en.cppreference.com/w/cpp/named_req/BasicLockable "cpp/named req/BasicLockable") object, such as [std::shared_lock](https://en.cppreference.com/w/cpp/thread/shared_lock "cpp/thread/shared lock").
+
+Condition variables permit concurrent invocation of the [wait](https://en.cppreference.com/w/cpp/thread/condition_variable/wait "cpp/thread/condition variable/wait"), [wait_for](https://en.cppreference.com/w/cpp/thread/condition_variable/wait_for "cpp/thread/condition variable/wait for"), [wait_until](https://en.cppreference.com/w/cpp/thread/condition_variable/wait_until "cpp/thread/condition variable/wait until"), [notify_one](https://en.cppreference.com/w/cpp/thread/condition_variable/notify_one "cpp/thread/condition variable/notify one") and [notify_all](https://en.cppreference.com/w/cpp/thread/condition_variable/notify_all "cpp/thread/condition variable/notify all") member functions.
+
+The class `std::condition_variable` is a [StandardLayoutType](https://en.cppreference.com/w/cpp/named_req/StandardLayoutType "cpp/named req/StandardLayoutType"). It is not [CopyConstructible](https://en.cppreference.com/w/cpp/named_req/CopyConstructible "cpp/named req/CopyConstructible"), [MoveConstructible](https://en.cppreference.com/w/cpp/named_req/MoveConstructible "cpp/named req/MoveConstructible"), [CopyAssignable](https://en.cppreference.com/w/cpp/named_req/CopyAssignable "cpp/named req/CopyAssignable"), or [MoveAssignable](https://en.cppreference.com/w/cpp/named_req/MoveAssignable "cpp/named req/MoveAssignable")
+
+### Example
+`std::condition_variable` is used in combination with a `std::mutex` to facilitate inter-thread communication
+```C++
+#include <condition_variable>
+#include <iostream>
+#include <mutex>
+#include <string>
+#include <thread>
+ 
+[std::mutex](http://en.cppreference.com/w/cpp/thread/mutex) m;
+std::condition_variable cv;
+[std::string](http://en.cppreference.com/w/cpp/string/basic_string) data;
+bool ready = false;
+bool processed = false;
+ 
+void worker_thread()
+{
+    // wait until main() sends data
+    [std::unique_lock](http://en.cppreference.com/w/cpp/thread/unique_lock) lk(m);
+    cv.wait(lk, []{ return ready; });
+ 
+    // after the wait, we own the lock
+    [std::cout](http://en.cppreference.com/w/cpp/io/cout) << "Worker thread is processing data\n";
+    data += " after processing";
+ 
+    // send data back to main()
+    processed = true;
+    [std::cout](http://en.cppreference.com/w/cpp/io/cout) << "Worker thread signals data processing completed\n";
+ 
+    // manual unlocking is done before notifying, to avoid waking up
+    // the waiting thread only to block again (see notify_one for details)
+    lk.unlock();
+    cv.notify_one();
+}
+ 
+int main()
+{
+    [std::thread](http://en.cppreference.com/w/cpp/thread/thread) worker(worker_thread);
+ 
+    data = "Example data";
+    // send data to the worker thread
+    {
+        [std::lock_guard](http://en.cppreference.com/w/cpp/thread/lock_guard) lk(m);
+        ready = true;
+        [std::cout](http://en.cppreference.com/w/cpp/io/cout) << "main() signals data ready for processing\n";
+    }
+    cv.notify_one();
+ 
+    // wait for the worker
+    {
+        [std::unique_lock](http://en.cppreference.com/w/cpp/thread/unique_lock) lk(m);
+        cv.wait(lk, []{ return processed; });
+    }
+    [std::cout](http://en.cppreference.com/w/cpp/io/cout) << "Back in main(), data = " << data << '\n';
+ 
+    worker.join();
+}
+```
+
+Output:
+```C++
+main() signals data ready for processing
+Worker thread is processing data
+Worker thread signals data processing completed
+Back in main(), data = Example data after processing
+```
+
+## Condition Variables - Slides
+**How do you signal between threads?**
+- What if you want to ensure that one thread starts before another (1 thread waits until another thread says go)
+- Or to check if a condition is true before proceeding?
+
+What we want:
+```C++
+//a global
+bool isReady=false;
+
+//Thread 1
+# efficiently waiting on isReady == True
+
+//Thread 2
+# sets isReady==True and then wakes up Thread 1
+```
+
+### How do you signal between threads?
+- As an example, if I launch 2 threads;
+	- 1 to deposit $100
+	- 1 to withdraw $90
+- I want to deposit to finish first (otherwise overdraft)
+- How to do this?
+```C++
+//how do you ensure you deposit before withdraw?
+thread thread1(withdraw, 50);
+thread thread2(deposit, 90);
+```
+
+- Start with this code (BTW, it does not ensure the deposit occurs first)
+Thread 1
+```C++
+mutex m;
+int balance = 0;
+
+void withdraw(int amount){
+
+	lock_guard<mutex> lck(m);
+	balance -= amount;
+	if(balance < 0){
+		cout<<"You are overdrawn"<<endl;
+	} else {
+		cout<<"no worries"<<endl;
+	}
+}
+``` 
+
+Thread 2
+```C++
+void deposit(int amount){
+	//deposit is delayed!
+	std::this_thread::slee_for(std::chrono::milliseconds)//...
+
+	lock_guard<mutex> lck(m); //waiting for mutex
+	balance += amount;
+}
+```
+
+### Can use a spin lock
+- Works but at a cost!
+- High CPU usage!
+- See [Simple_Condition_Variable](https://github.com/CNUClasses/Simple_Condition_Variable) project, call up System Monitor and watch one cores usages spike
+```C++
+mutex m;
+int balance = 0;
+bool deposit_made = false;
+
+void withdraw(int amount){
+	//the bad idea, a busy wait
+	while (!deposit_made){}
+
+	lock_guard<mutex> lck(m);
+	balance -= amount;
+	if(balance < 0){
+		cout<<"You are overdrawn"<<endl;
+	} else {
+		cout<<"no worries"<<endl;
+	}
+}
+```
+
+```C++
+void deposit(int amount){
+	//deposit is delayed!
+	std::this_thread::slee_for(std::chrono::milliseconds)//...
+
+	lock_guard<mutex> lck(m); //waiting for mutex
+	balance += amount;
+	deposit_made = true;
+}
+```
+
+### Get ride of that spinning
+- Instead would like to put the waiting thread to sleep until the event occurs...
+- And then wake it up
+- No more spiking CPU core usage!
+
+### Use condition variables
+- First the proper include (works with C++ 11 and above)
+`#include <condition_variable>`
+- And a new kind of lock object
+```C++
+//just like a lock_guard
+//PLUS you can manually unlock it!
+unique_locK<mutex> lck(m);
+```
+- Works just like a lock guard
+- Except you can manually unlock it
+- AND IT'S THE ONLY KIND OF LOCK A CONDITION_VARIABLE CAN WAIT ON!
+
+### Use condition variables
+Thread 1
+```C++
+mutex m;
+int balance = 0;
+bool deposit_made = false;
+condition_variable cv;
+
+void withdraw(int amount){
+	//just like a lock_guard
+	//PLUS you can manually unlock it!
+	unique_lock<mutex> lck(m); //Note the unique lock
+	
+	//MUST be a loop to handle
+	//spurious wakeups
+	while(!deposit_made){
+		cv.wait(lck);    //if here, release lock
+						 //and then sleep until
+						 //awakened
+	}
+
+	balance -= amount;
+	if(balance < 0){
+		cout<<"You are overdrawn"<<endl;
+	} else {
+		cout<<"no worries"<<endl;
+	}
+}
+```
+
+- Note the unique lock `unique_lock<mutex> lck(m);`
+- `while(!deposit_made)` This MUST be a while loop so Thread can go back to sleep if it wakes and the condition evaluates to false
+	- Can be any expression that evaluates to a bool 
+		- for instance: `(!deposit_made && !likes_dogs)`
+- `balance -= amount;` If you get here thread has awakened, acquired lock, checked condition (!deposit_made) and broken out of while loop. Code owns lck at this point
+
+
+Thread 2
+```C++
+void deposit(int amount){
+	//deposit is delayed!
+	std::this_thread::slee_for(std::chrono::milliseconds)//...
+	{
+		lock_guard<mutex> lck(m);
+		balance += amount;
+		
+		//must change condition while locked!
+		deposit_made = true;
+	}
+	//must release lock before notify notify_all wakes ALL threads
+	//waiting on this cv. One will acquire the mutex, check condition
+	//in while and move forward the other go back to sleep
+	cv.notify_all();
+}
+```
+
+```C++
+lock_guard<mutex> lck(m);
+balance += amount;
+```
+- Lock_guard, unique_lock... Whatever, just lock it!
+- `deposit_made = true;` Boolean used in waiting threads while loop
+	- Change value to indicate waiting thread should wake
+- (End of sleep_for) Lock_guard goes out of scope here, make sure you release mutex before signaling!
+- `cv.notify_all();` Wake up every thread waiting on condition_variable cv
+
+### Problem - Spurious wakeup
+- **Spurious wakeup** - sometimes the receiver wakes up, although notification happened. POSIX Threads and the Windows API are vulnerable to this.
+- That's why we have the while loop
+- If thread awakes without condition being changed it just goes back to sleep
+
+### Problem - Lost Wakeup
+- **Lost wakeup** - the send sends its notification before the receiver waits on the cv. So the notification is lost (but not in this code)
+- What happens if Thread2 notifies when Thread1 is at any arrow below?
+- (Keep in mind who holds the lock)
+- No worries here
+```C++
+void withdraw(int amount){
+	//just like a lock_guard
+	//PLUS you can manually unlock it!                   <--
+	unique_lock<mutex> lck(m); //Note the unique lock
+	
+	//MUST be a loop to handle
+	//spurious wakeups
+	while(!deposit_made){
+		cv.wait(lck);    //if here, release lock          <--
+						 //and then sleep until
+						 //awakened
+	}
+
+	balance -= amount;
+	if(balance < 0){
+		cout<<"You are overdrawn"<<endl;
+	} else {
+		cout<<"no worries"<<endl;
+	}
+}
+```
+
+### Condition variables - notifying
+- **notify_one();**   
+	- wake just 1 thread waiting
+- **notify_all();**
+	- wake them all, 1 will acquire the mutex, go about its business, then the next acquires mutex etc
+
+- I use notify_all for convenience in this class because I often have more than 1 thread waiting on the condition_variable and I want them all to awake
+- If I used notify_one instead and had multiple threads, one would wake up and the rest would sleep, possibly never awakening and blocking my program
+
+### Condition variables - waiting
+- **'wait'** releases the mutex until condition_variable is signaled
+
+
+- **cv.wait**           wait until notified
+- **cv.wait_for**    timed version of wait
+- **cv.wait_until**  ''
+
+## Producer Consumer
+- One thread produces widget
+- One thread consumes widgets
+
+- Producer thread is in charge - tells consumer to get to work
+- Consumer thread waits until told to work and then does so
+
+Can do it 2 ways;
+- Partially coordinated: No confirmation from consumer
+![[prod_cons_1.png]]
+- Coordinated: lockstep coordination between producer and consumer
+![[prod_cons_2.png]]
+
+### Producer Consumer  - Outline
+(partially coordinated)
+```C++
+//globals
+gCount = 0; //tracks widgets
+bDone = false; //is producer finished?
+```
+![[prod_cons_3.png]]
+![[prod_cons_4.png]]
