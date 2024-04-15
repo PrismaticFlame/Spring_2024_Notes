@@ -375,8 +375,11 @@ int bal = 50;
 
 void withdrawmoney(int amt) {
 	if (bal>amt) {
-		//What happens if you are interrupted right after the if conditional 
+		//What happens if you are interrupted right after the if
+		//conditional 
+		
 		//check
+		
 		//Will not help to make bal an atomic (why?)
 		cout<<"approved!"<<endl;
 		bal -= amt;

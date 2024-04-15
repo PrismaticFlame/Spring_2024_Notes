@@ -18,6 +18,16 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "dde3a22f360d41c8",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "Spring 24/threads_race_condition_again.pdf"
+              }
+            }
           }
         ]
       }
@@ -149,6 +159,9 @@
   },
   "active": "ac8f882b9b99e13c",
   "lastOpenFiles": [
+    "Race Condition again - what happens here.md",
+    "Spring 24/threads_race_condition_again.pdf",
+    "Spring 24/Study for Test 2.md",
     "Spring 24/prod_cons_4.png",
     "Spring 24/prod_cons_4.png.crdownload",
     "Spring 24/prod_cons_3.png",
@@ -159,9 +172,6 @@
     "Spring 24/prod_cons_1.png.crdownload",
     "Thread Ticket Agent Slides.md",
     "Spring 24/thread_ticket_agent.pdf",
-    "Spring 24/Study for Test 2.md",
-    "Race Condition again - what happens here.md",
-    "Spring 24/threads_race_condition_again.pdf",
     "Spring 24/threads_starts_diff.pdf",
     "Spring 24/race_conditions_2.png",
     "Spring 24/race_conditions_2.png.crdownload",
