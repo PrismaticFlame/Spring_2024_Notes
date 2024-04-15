@@ -1131,7 +1131,7 @@ balance += amount;
 - If thread awakes without condition being changed it just goes back to sleep
 
 ### Problem - Lost Wakeup
-- **Lost wakeup** - the send sends its notification before the receiver waits on the cv. So the notification is lost (but not in this code)
+- **Lost wakeup** - the sender sends its notification before the receiver waits on the cv. So the notification is lost (but not in this code)
 - What happens if Thread2 notifies when Thread1 is at any arrow below?
 - (Keep in mind who holds the lock)
 - No worries here
