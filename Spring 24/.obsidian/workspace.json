@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Study for Test 2.md",
+                "file": "Soupline.cpp.md",
                 "mode": "source",
                 "source": false
               }
@@ -69,8 +69,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "e89082e09d15b01d",
@@ -86,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Study for Test 2.md",
+                "file": "Soupline.cpp.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Study for Test 2.md",
+                "file": "Soupline.cpp.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Study for Test 2.md"
+                "file": "Soupline.cpp.md"
               }
             }
           },
@@ -159,6 +158,24 @@
   },
   "active": "6d71519dd77f45ab",
   "lastOpenFiles": [
+    "Project 3.md",
+    "Soupline.cpp.md",
+    "Person.cpp.md",
+    "Study for Test 2.md",
+    "Untitled.md",
+    "Timeline View (of Thread SchedulE.md",
+    "Race Condition again - what happens here.md",
+    "threads_starts_diff.pdf",
+    "threads_stack_pointers.png",
+    "threads_race_condition_again.pdf",
+    "thread_ticket_agent.pdf",
+    "race_conditions_2.png",
+    "race_conditions_1.png",
+    "prod_cons_4.png",
+    "prod_cons_3.png",
+    "prod_cons_2.png",
+    "prod_cons_1.png",
+    "[537] Threads.pdf",
     "TLBexample_with_asid.png",
     "TLBexample_with_asid.png.crdownload",
     "TLBAccess_sequential_example.png",
@@ -166,7 +183,6 @@
     "array_iterator.png",
     "array_iterator.png.crdownload",
     "Operating Systems.md",
-    "Study for Test 2.md",
     "Outliers.md",
     "Neural Networks and Machine Learning.md",
     "Round-Robin.md",
@@ -176,8 +192,6 @@
     "Exponential Linear Unit (ELU).md",
     "Parametric ReLU (PReLU).md",
     "Leaky ReLU.md",
-    "Pasted image 20240301143317.png",
-    "Pasted image 20240301143239.png",
     "Gantt chart.md",
     "Process Tables.md",
     "Utilization Histograms.md",
@@ -187,17 +201,6 @@
     "Flat Page Table.md",
     "Introduction To Robotics.md",
     "Cubic Interpolation.md",
-    "hex.md",
-    "Pasted image 20240222101932.png",
-    "TLB.md",
-    "Weighted A-star Search.md",
-    "Back Propagation.md",
-    "Vanishing Gradient.md",
-    "Pasted image 20240219142144.png",
-    "Pasted image 20240213095818.png",
-    "Pasted image 20240202141609.png",
-    "Pasted image 20240202141538.png",
-    "Pasted image 20240202141505.png",
     "What does the CPU do doing I",
     "I",
     "Images"

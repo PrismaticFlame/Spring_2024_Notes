@@ -1053,7 +1053,7 @@ void deposit(int amount){
 ```C++
 //just like a lock_guard
 //PLUS you can manually unlock it!
-unique_locK<mutex> lck(m);
+unique_lock<mutex> lck(m);
 ```
 - Works just like a lock guard
 - Except you can manually unlock it
@@ -1100,7 +1100,7 @@ Thread 2
 ```C++
 void deposit(int amount){
 	//deposit is delayed!
-	std::this_thread::slee_for(std::chrono::milliseconds)//...
+	std::this_thread::sleep_for(std::chrono::milliseconds)//...
 	{
 		lock_guard<mutex> lck(m);
 		balance += amount;
@@ -1197,3 +1197,6 @@ bDone = false; //is producer finished?
 ```
 ![[prod_cons_3.png]]
 ![[prod_cons_4.png]]
+
+
+# [[Project 3]]
