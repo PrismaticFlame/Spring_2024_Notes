@@ -745,3 +745,6 @@ Ensemble methods are ways to combine the results of many learners, typically wea
 - PCA
 	- I don't really get this
 - XGBoost
+
+# [[Final Exam Review 595 ]]
+
