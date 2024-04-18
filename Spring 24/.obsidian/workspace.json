@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Final Exam Review 472.md",
+                "file": "Final Exam Review 144.md",
                 "mode": "source",
                 "source": false
               }
@@ -69,7 +69,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "e89082e09d15b01d",
@@ -85,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Final Exam Review 472.md",
+                "file": "Final Exam Review 144.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Final Exam Review 472.md",
+                "file": "Final Exam Review 144.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Final Exam Review 472.md"
+                "file": "Final Exam Review 144.md"
               }
             }
           },
@@ -138,7 +139,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
@@ -159,11 +160,14 @@
   "active": "17d381bb3fbfe3c3",
   "lastOpenFiles": [
     "Final Exam Review 144.md",
+    "How a star moves along the H-R diagram as it ages.md",
+    "star_cluster_age.png",
+    "star_cluster_age.png.crdownload",
+    "Study for Test 2 410.md",
     "Final Exam Review 472.md",
     "Soupline.cpp.md",
     "Project 3.md",
     "Person.cpp.md",
-    "Study for Test 2.md",
     "Untitled.md",
     "Timeline View (of Thread SchedulE.md",
     "Race Condition again - what happens here.md",
@@ -182,7 +186,6 @@
     "TLBexample_with_asid.png.crdownload",
     "TLBAccess_sequential_example.png",
     "TLBAccess_sequential_example.png.crdownload",
-    "array_iterator.png",
     "array_iterator.png.crdownload",
     "Operating Systems.md",
     "Outliers.md",
@@ -199,10 +202,7 @@
     "Utilization Histograms.md",
     "Multiprogramming.md",
     "Basic elements.md",
-    "Fetch & Execute.md",
-    "Flat Page Table.md",
     "What does the CPU do doing I",
-    "I",
-    "Images"
+    "I"
   ]
 }

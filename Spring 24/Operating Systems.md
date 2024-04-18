@@ -1190,6 +1190,6 @@ int main(){
 }
 ```
 
-# [[Study for Test 2]]
+# [[Study for Test 2 410]]
 
 # [[Final Exam Review 410]]
