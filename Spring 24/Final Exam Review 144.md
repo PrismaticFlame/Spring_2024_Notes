@@ -4,8 +4,15 @@
 - **Parsec**
 - **Apparent Brightness (magnitude)**
 - **Luminosity**
+	- We can't measure stellar size for stars far away, so must get indirect determinations of the size of stars
+	- Luminosity is related to both temperature and surface area
+		- Larger stars radiate more than smaller stars
+	- $L \propto r^2T^4$ or "Luminosity is proportional to radius squared times temperature to the fourth" so the higher the temperature and luminosity, the higher the radius of the star!
 - **Dwarf stars**
 - **Giant stars**
+	- Giants: 10 - 100 times the radius of the Sun ($R_{\Phi}$) 
+	- Super Giants: up to 1000 $R_{\Phi}$
+	- 
 - **Spectral Class**
 - **Luminosity Class**
 - **Cosmic Background Radiation**
@@ -115,12 +122,20 @@
 		- Therefore, the only difference between the star is mass
 
 # Concepts to Know
-<<<<<<< HEAD
 - **How we measure the distance of a star**
 - **Parallax**
 - **Spectroscopic Parallax**
 - **H-R Diagram**
+	- The *Hertzsprung-Russel Diagram*: Astronomers started to plot the known stars based on surface temperature (spectral class) and luminosity and found something interesting. A pattern developed for the position of the stars on plot and thus helped our knowledge of the types of stars and their lifespan
+	- Different sections describe different types of stars
+		- Main Sequence
+		- White dwarfs
+		- Giants
+		- Supergiants
+		- Red dwarfs
 - **Main sequence stars**
+	- The section of the H-R diagram that includes the most amount of stars in a slightly upwards curving line in the middle of the graph
+		- Our sun is in this section
 - **Binary systems**
 - **Classification of stars and what they tell us about the stars**
 - **Spectral class (OBAFGKM)**
@@ -185,31 +200,5 @@
 	- [Dark Energy] the anti-gravitational force that is causing the universe to expand more rapidly
 		- It is the energy and pressure associated with empty space!
 		- Both Dark Matter (unseen, highly non-interactive stuff) and Dark Energy (the vacuum anti gravity) have an effect on the "shape" of spacetime
-=======
-- How we measure the distance of a star
-- Parallax
-- Spectroscopic Parallax
-- H-R Diagram
-- Main sequence stars
-- Binary systems
-- Classification of stars and what they tell us about the stars
-- Spectral class (OBAFGKM)
-- Magnitude class (-30 to 30)
-- Luminosity class
-- Different types of nebulae
-- How we measure nebulae
-- The steps to forming a star like our sun
-- How stars move along the H-R diagram as they form
-- Different types of supernova
-- Death of low mass vs. high mass star
-- How we use star clusters to tell us about stellar evolution
-- How a star moves along the H-R diagram as it ages
-- How heavier elements are formed
-- The life cycle of stars, why do younger stars have heavier elements
-- Why the luminosity, temperature and radius change during the process of becoming a white dwarf
-- How we "measure" black holes
-- Cosmic red shift
-- How we measure distances
-- Need for Dark Energy and Dark Matter
 
->>>>>>> origin/master
+
