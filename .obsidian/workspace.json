@@ -4,59 +4,35 @@
     "type": "split",
     "children": [
       {
-        "id": "e555ead4e6affe8e",
+        "id": "f9763cdf6806b2be",
         "type": "tabs",
         "children": [
           {
-            "id": "ac8f882b9b99e13c",
+            "id": "ec5c0ea1bff607df",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Final Exam Review 595.md",
+                "file": "Spring 24/Final Exam Review 472.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "4b2cc7efcdbf4446",
+            "id": "2eb5a2c5f98c304b",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Final Exam Review 472.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "7c4970f59632677d",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Final Exam Review 410.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "bb66a584d2b8529c",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Final Exam Review 144.md",
+                "file": "Spring 24/Final Exam Review 144.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -122,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Final Exam Review 144.md",
+                "file": "Spring 24/Final Exam Review 144.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -139,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Final Exam Review 144.md",
+                "file": "Spring 24/Final Exam Review 144.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -162,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Final Exam Review 144.md"
+                "file": "Spring 24/Final Exam Review 144.md"
               }
             }
           }
@@ -184,14 +160,23 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "bb66a584d2b8529c",
+  "active": "2eb5a2c5f98c304b",
   "lastOpenFiles": [
-    "Spring 24/Astronomy.md",
+    "Spring 24/Final Exam Review 472.md",
+    "Homework 2_472.pdf",
     "Final Exam Review 144.md",
-    "Final Exam Review 410.md",
-    "Final Exam Review 472.md",
-    "Spring 24/Operating Systems.md",
     "Final Exam Review 595.md",
+    "Final Exam Review 472.md",
+    "Final Exam Review 410.md",
+    "Spring 24/Untitled.md",
+    "Spring 24/Timeline View (of Thread SchedulE.md",
+    "Spring 24/Soupline.cpp.md",
+    "Spring 24/Race Condition again - what happens here.md",
+    "Spring 24/Project 3.md",
+    "Spring 24/Person.cpp.md",
+    "Spring 24/Final Exam Review 144.md",
+    "Spring 24/Astronomy.md",
+    "Spring 24/Operating Systems.md",
     "Spring 24/Introduction To Robotics.md",
     "Spring 24/Neural Networks and Machine Learning.md",
     "Spring 24/Study for Test 2.md",
@@ -213,7 +198,6 @@
     "Spring 24/race_conditions_1.png",
     "Spring 24/race_conditions_1.png.crdownload",
     "Timeline View (of Thread SchedulE.md",
-    "Spring 24/[537] Threads.pdf",
     "Spring 24/threads_stack_pointers.png",
     "Spring 24/Symmetric Multi-Processors.md",
     "Spring 24/array_iterator.png",

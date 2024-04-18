@@ -115,6 +115,7 @@
 		- Therefore, the only difference between the star is mass
 
 # Concepts to Know
+<<<<<<< HEAD
 - **How we measure the distance of a star**
 - **Parallax**
 - **Spectroscopic Parallax**
@@ -184,3 +185,31 @@
 	- [Dark Energy] the anti-gravitational force that is causing the universe to expand more rapidly
 		- It is the energy and pressure associated with empty space!
 		- Both Dark Matter (unseen, highly non-interactive stuff) and Dark Energy (the vacuum anti gravity) have an effect on the "shape" of spacetime
+=======
+- How we measure the distance of a star
+- Parallax
+- Spectroscopic Parallax
+- H-R Diagram
+- Main sequence stars
+- Binary systems
+- Classification of stars and what they tell us about the stars
+- Spectral class (OBAFGKM)
+- Magnitude class (-30 to 30)
+- Luminosity class
+- Different types of nebulae
+- How we measure nebulae
+- The steps to forming a star like our sun
+- How stars move along the H-R diagram as they form
+- Different types of supernova
+- Death of low mass vs. high mass star
+- How we use star clusters to tell us about stellar evolution
+- How a star moves along the H-R diagram as it ages
+- How heavier elements are formed
+- The life cycle of stars, why do younger stars have heavier elements
+- Why the luminosity, temperature and radius change during the process of becoming a white dwarf
+- How we "measure" black holes
+- Cosmic red shift
+- How we measure distances
+- Need for Dark Energy and Dark Matter
+
+>>>>>>> origin/master
