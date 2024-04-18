@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "39210f4dd77e346a",
+        "id": "a8e3bb85e8c6063c",
         "type": "tabs",
         "children": [
           {
-            "id": "6d71519dd77f45ab",
+            "id": "17d381bb3fbfe3c3",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Soupline.cpp.md",
+                "file": "Final Exam Review 472.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Soupline.cpp.md",
+                "file": "Final Exam Review 472.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Soupline.cpp.md",
+                "file": "Final Exam Review 472.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Soupline.cpp.md"
+                "file": "Final Exam Review 472.md"
               }
             }
           },
@@ -156,10 +156,12 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "6d71519dd77f45ab",
+  "active": "17d381bb3fbfe3c3",
   "lastOpenFiles": [
-    "Project 3.md",
+    "Final Exam Review 144.md",
+    "Final Exam Review 472.md",
     "Soupline.cpp.md",
+    "Project 3.md",
     "Person.cpp.md",
     "Study for Test 2.md",
     "Untitled.md",
@@ -199,8 +201,6 @@
     "Basic elements.md",
     "Fetch & Execute.md",
     "Flat Page Table.md",
-    "Introduction To Robotics.md",
-    "Cubic Interpolation.md",
     "What does the CPU do doing I",
     "I",
     "Images"

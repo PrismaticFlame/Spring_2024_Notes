@@ -1,0 +1,60 @@
+# Terms
+- Arallax
+- Spectrocopic Parallax
+- Parsec
+- Apparent Brightness (magnitude)
+- Luminosity
+- Dwarf stars
+- Giant stars
+- Spectral Class
+- Luminosity Class
+- Cosmic Background Radiation
+- Standard candle
+- Hubble's Law
+- Tully-Fisher relation
+- Variable Stars
+- Types of galaxies
+- Interstellar medium
+- Reddening
+- Emisssion nebula
+- Molecular clouds
+- Protostar
+- Evolutionary track
+- Dust lanes
+- Brown Dwarf
+- Helium flash
+- Nova
+- Supernova (Type 1 and Type 2)
+- Planetary Nebula
+- White dwarf (black dwarf)
+- Neutron star
+- Pulsar
+- Black hole
+- Event horizon (Schwarzchild radius)
+- Star Clusters
+# Concepts to Know
+- How we measure the distance of a star
+- Parallax
+- Spectroscopic Parallax
+- H-R Diagram
+- Main sequence stars
+- Binary systems
+- Classification of stars and what they tell us about the stars
+- Spectral class (OBAFGKM)
+- Magnitude class (-30 to 30)
+- Luminosity class
+- Different types of nebulae
+- How we measure nebulae
+- The steps to forming a starlike our sun
+- How stars move along the H-R diagram as they form
+- Different types of supernova
+- Death of low mass vs. high mass star
+- How we use star clusters to tell us about stellar evolution
+- How a star moves along the H-R diagram as it ages
+- How heavier elements are formed
+- The life cycle of stars, why do younger stars have heavier elements
+- Why the luminosity, temperature and radius change during the process of becoming a white dwarf
+- How we "measure" black holes
+- Cosmic red shift
+- How we measure distances
+- Need for Dark Energy and Dark Matter
