@@ -45,7 +45,7 @@
 - Luminosity class
 - Different types of nebulae
 - How we measure nebulae
-- The steps to forming a starlike our sun
+- The steps to forming a star like our sun
 - How stars move along the H-R diagram as they form
 - Different types of supernova
 - Death of low mass vs. high mass star
@@ -58,3 +58,4 @@
 - Cosmic red shift
 - How we measure distances
 - Need for Dark Energy and Dark Matter
+
