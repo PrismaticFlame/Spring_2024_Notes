@@ -30,9 +30,33 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "e18523b91e27ea7e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Final Exam Review 595.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "95c4e701140c8c69",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Final Exam Review 410.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -98,7 +122,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spring 24/Final Exam Review 144.md",
+                "file": "Final Exam Review 595.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +139,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spring 24/Final Exam Review 144.md",
+                "file": "Final Exam Review 595.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +162,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spring 24/Final Exam Review 144.md"
+                "file": "Final Exam Review 595.md"
               }
             }
           }
@@ -159,20 +183,20 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "2eb5a2c5f98c304b",
+  "active": "e18523b91e27ea7e",
   "lastOpenFiles": [
+    "Final Exam Review 410.md",
+    "Spring 24/Final Exam Review 472.md",
+    "Spring 24/Final Exam Review 144.md",
+    "Final Exam Review 595.md",
     "Spring 24/main_sequence_stars.png",
     "Spring 24/main_sequence_stars.png.crdownload",
-    "Spring 24/Final Exam Review 472.md",
     "Spring 24/star_cluster_age.png",
     "Spring 24/Study for Test 2 410.md",
     "Spring 24/How a star moves along the H-R diagram as it ages.md",
-    "Spring 24/Final Exam Review 144.md",
     "Homework 2_472.pdf",
     "Final Exam Review 144.md",
-    "Final Exam Review 595.md",
     "Final Exam Review 472.md",
-    "Final Exam Review 410.md",
     "Spring 24/Untitled.md",
     "Spring 24/Timeline View (of Thread SchedulE.md",
     "Spring 24/Soupline.cpp.md",
@@ -203,7 +227,6 @@
     "Timeline View (of Thread SchedulE.md",
     "Spring 24/threads_stack_pointers.png",
     "Spring 24/Symmetric Multi-Processors.md",
-    "Spring 24/array_iterator.png",
-    "Spring 24/TLBexample_with_asid.png"
+    "Spring 24/array_iterator.png"
   ]
 }
