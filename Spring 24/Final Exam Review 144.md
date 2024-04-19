@@ -1,20 +1,57 @@
 # Terms
-- **Arallax**
-- **Spectrocopic Parallax**
+- **Parallax**
+	- Because stars are so far away, the angles measured are very very small, so we measure them in arc seconds rather than degrees
+	- Apparent shift of an object relative to some distant background, as the observer's point of view changes
+- **Spectroscopic Parallax**
+	- Measure the star's apparent brightness and spectral type to find the distance to the star
+		- Use the spectral type to estimate star's luminosity, assuming main sequence
+		- Apply the inverse square law to determine the distance of the star
 - **Parsec**
+	- If the parallax is 1" (1 arc second, 1/3600 degrees) then the object must be 206,265 AU ($3.1 x 10^6$m) or 1 parsec away from the Sun.
 - **Apparent Brightness (magnitude)**
+	- The amount of energy striking a unit area of some light sensitive surface (human eye or camera)
+		- Location dependent
+			- Will increase as you get closer to the surface
+	- $B \propto L/d^2$ 
+	- Large magnitude means a lower brightness
+	- A change of 5 magnitude is **a factor of 100 apparent magnitude**
+		- 1 is approximately 100 times brighter than 6
 - **Luminosity**
+	- The amount of radiation leaving a star per unit time
+		- Independent of location or motion of observer
 	- We can't measure stellar size for stars far away, so must get indirect determinations of the size of stars
 	- Luminosity is related to both temperature and surface area
 		- Larger stars radiate more than smaller stars
 	- $L \propto r^2T^4$ or "Luminosity is proportional to radius squared times temperature to the fourth" so the higher the temperature and luminosity, the higher the radius of the star!
 - **Dwarf stars**
+	- Any star with a radius comparable to our Sun or smaller radius
+	- Red dwarves
+	- Brown dwarves
+	- White dwarves
+	- Black dwarves
 - **Giant stars**
 	- Giants: 10 - 100 times the radius of the Sun ($R_{\Phi}$) 
 	- Super Giants: up to 1000 $R_{\Phi}$
 	- 
 - **Spectral Class**
+	- Tells us the the stars surface temperature better then black body radiation
+		- The star classifications of **O, B, A, F, G, K, M**
+			- Oh Be A Fine Girl/Guy, Kiss Me (From greatest to least in terms of size).
+		- Subdivisions are number 0-9
+		- The lower the number the hotter the star.
+			- A G1 is a little hotter than a G4
+	- The main sequence star classifications. They are a similar size if they are a similar temperature
 - **Luminosity Class**
+	1. 0 *or* Ia$^+$ - hypergiants or extremely luminous supergiants
+	2. Ia - luminous supergiants
+	3. Iab - intermediate-size luminous supergiants
+	4. Ib - less luminous supergiants
+	5. II - bright giants
+	6. III - normal giants
+	7. IV - subgiants
+	8. V - main-sequence stars (dwarfs)
+	9. sd *or* VI - subdwarfs
+	10. D *or* VII - white dwarfs
 - **Cosmic Background Radiation**
 	- leftover radiation from the Big Bang or the time when the universe began
 	- Cosmic Background Explorer (COBE) 1992
@@ -44,13 +81,50 @@
 		- Intense star formation activity
 		- Contain both young population stars and old population stars
 - **Interstellar medium**
+	- Dark spots in the sky make it look devoid of stars
+		- These areas of space are NOT empty, but the starlight is blocked by interstellar gas and dust
+	- Since longer wavelengths can pass more easily through the interstellar material, there is a "reddening" of the stars behind (or in) the cloud
+	- Some clouds block all visible light, and stars can only be seen in the infrared
+	- The average density of interstellar space is $10^6$ atoms per cubic meter
+		- The best vacuums on Earth can only reach $10^9$ atoms per cubic meter
 - **Reddening**
-- **Emisssion nebula**
+	- Spectrum seen due to the higher frequencies (blue and purple) of light scattering more than the lower frequencies (red)
+	- 
+- **Emission nebula**
+	- Glow from stars within the nebula
+- **Reflection nebulae** 
+	- seen by light (usually blue) reflecting off of them
 - **Molecular clouds**
+	- Very dense ($10^{12}$ particles per cubic meter) very cold (20 K) clouds in space
+		- Contain heavier molecules pulled together by gravity
+		- Can be up to millions of times the mass of the sun
+		- Can be found in very large complexes
+			- 50 pc across
 - **Protostar**
+	- Size - Mercury's orbit (0.4 AU)
+	- Central temp - 1,000,000 K (not enough for fusion)
+	- Luminosity ~ 1000x the Sun (from relase of gravitational energy)
+	- Can now be plotted on H-R diagram and starts an "evolutionary track" of the star
 - **Evolutionary track**
+	- How it moves across the H-R diagram (curve from bottom right to top left)
+		- Formation
+		- Main Sequence
+		- Post-Main Sequence
+			- Red Giant Phase
+			- Horizontal Branch
+			- Blue Supergiant Phase
+		- Stellar Remnants
+		- Variable Stars
+	- Larger stars take a shorter time to form 
+		- O-type ~ 1 million years (1/50 of the Sun's time)
+	- Smaller stars take much longer
+		- M-type ~ 1 billion years
 - **Dust lanes**
+	- Darker part of the cloud that obscure light
 - **Brown Dwarf**
+	- A star that starts the process but never becomes a true star due to the lack of mass to start fusion reactions
+		- There could be as many as 100 billion brown dwarf's in interstellar space (comparable to the number of stars in our galaxy)
+		- Minimum mass needed for Fusion: 0.08 M solar masses or 80 jupiter masses
 - **Helium flash**
 	- Once helium starts burning, the core can't respond quickly enough and there is an explosion that lasts a few hours
 - **Nova**
@@ -123,8 +197,15 @@
 
 # Concepts to Know
 - **How we measure the distance of a star**
+	- Parallax & Spectroscopic Parallax
 - **Parallax**
+	- Closer objects move more than distant objects
+	- Easiest way to do this is to take photos of stars at different times of the year
+	- Can only work for stars at certain distances away
+	- Distance (parsec) = 1 / parallax (arc seconds)
 - **Spectroscopic Parallax**
+	- Use the spectral type to estimate star's luminosity, assuming main sequence
+	- Apply the inverse square law to determine the distance of the star
 - **H-R Diagram**
 	- The *Hertzsprung-Russel Diagram*: Astronomers started to plot the known stars based on surface temperature (spectral class) and luminosity and found something interesting. A pattern developed for the position of the stars on plot and thus helped our knowledge of the types of stars and their lifespan
 	- Different sections describe different types of stars
@@ -137,15 +218,113 @@
 	- The section of the H-R diagram that includes the most amount of stars in a slightly upwards curving line in the middle of the graph
 		- Our sun is in this section
 - **Binary systems**
+	- Star systems mostly occur in binaries
+		- 2 stars that orbit about their common center of mass
+		- Our lonely single star is actually not as common
+	- Ways we know of binary stars
+		- Visual binary: A star system that is known to have two stars due to the two stars actually being able to be seen revolving around one another (only seen if very near)
+		- Spectroscopic binary: A binary star system found due to the effects of the doppler effect as seen in the spectra of the star ( Noticeable changes in the spectra of the light coming from the star seen redshifted at a particular time and then blue shifted at another time)
+		- Eclipsing binary: A binary star system found due to the apparent brightness drop for a star
+			- Brightness drops significantly more than the potential for an exoplanet, due to the size difference between the binary stars
+			- Also decreases brightness when one star is behind the other
 - **Classification of stars and what they tell us about the stars**
+	- Tells us the surface temperature better than black body radiation 
 - **Spectral class (OBAFGKM)**
+	1. O
+	2. B
+	3. A
+	4. F
+	5. G
+	6. K
+	7. M
 - **Magnitude class (-30 to 30)**
+	- The lower the number, the brighter the objects appear, and the higher the number the dimmer the number
 - **Luminosity class**
+	1. 0 *or* Ia$^+$ - hypergiants or extremely luminous supergiants
+	2. Ia - luminous supergiants
+	3. Iab - intermediate-size luminous supergiants
+	4. Ib - less luminous supergiants
+	5. II - bright giants
+	6. III - normal giants
+	7. IV - subgiants
+	8. V - main-sequence stars (dwarfs)
+	9. sd *or* VI - subdwarfs
+	10. D *or* VII - white dwarfs
 - **Different types of nebulae**
+	- A cloud of interstellar dust and gas
+		- Emission nebulae - glow from stars within the nebula
+		- Dust lanes - darker part of the cloud that obscure light
+		- Reflection nebulae - seen by light (usually blue) reflecting off of them
+		- Dark dust cloud (dark nebulae) - cooler and more dense than most interstellar clouds
 - **How we measure nebulae**
-- **The steps to forming a starlike our sun**
+	- Notice the difference between emission nebula, reflection nebula, and dust lanes
+	- Nebula "fuzziness": The fuzziness around the edge of the dust lanes is due to the radiation from the stars dispersing the clouds
+- **The steps to forming a star like our sun**
+	1. Interstellar Cloud
+		- Dark dust cloud or molecular cloud
+		- Density: $10^9$ particles per cubic meter
+		- Temperature - ~10k
+		- Size - Tens of parsecs
+		- Time - a few million years
+		- Collapse into smaller fragments - each fragment may become a star (lots of little stars or a few big stars)
+	2. Contracting Cloud
+		- Size - 10,000x our Sun
+		- Shape - sphereical
+		- Central temp - 10,000 K
+			- radiation that can't escape heats up the cloud
+		- Central density - $10^{18}$ particles per cubic meter ($10^{-9}$ kg/m$^3$)
+		- Enough mass accumulated to create a protostar w/ photosphere
+	3. Protostellar Evolution - Big and Bright
+		- Size - 10x our Sun
+		- Luminosity - 10x solar luminosity
+		- Surface temp - 4000 K
+		- Central temp - 5,000,000 K
+			- no fusion, yet!
+		- Gas is totally ionized (plasma)
+	4. T-Tauri Phase
+		- Lots of surface activity creates very strong protostellar winds
+		- Interaction with the winds and the nebular disk often results in bipolar flow - 2 jets
+		- Hydrogen starts to fuse!
+			- A star is born
+		- After this phase it is a star, but it's not a main sequence yet
+	5. Main Sequence Adult Life
+		- The star contracts for about 30 million years after hydrogen fusion begins
+			- Hydrostatic Equilibrium
+			- Central density - $10^{32}$ particles per meter cubed
+			- Central temp - 15 million K
+			- Surface temp - 6000 K
+			- Has taken 40-50 million years to get here
+				- Will stay here ~ 10 billion years
+	- Other, concise way of looking at star formation:
+		1. Dark cloud
+		2. Gravitational collapse
+		3. Protostar
+		4. T-Tauri star
+		5. Pre-main sequence star
+		6. Young stellar system
 - **How stars move along the H-R diagram as they form**
+	- Larger stars take a shorter time to form
+		- O-type ~ 1 million years (1/50 of the Sun's time)
+	- Smaller stars take much longer
+		- M-type ~ 1 billion years
+	- Stars spend >90% of their life on the main sequence
 - **Different types of supernova**
+	- Type 1 Supernova
+		- In white dwarves, the electrons are touching, which creates pressure
+			- There is a limit to how much mass there can be around the star before the pressure exceeds what the electrons can hold
+		- When this mass is exceeded, the core starts fuse carbon all at once. This causes the star to explode in a carbon-detonation supernova
+	- Type II supernova
+		- Core-collapse supernova
+			- Happens during the death of massive stars
+		- The leftover core is now a neutron star
+	- Supernova Wikipedia
+		- Type Ia
+		- Type Ib/c
+		- Type II-P/-L/n
+		- Type IIb
+		- Type III
+		- Type IV
+		- Type V
 - **Death of low mass vs. high mass star**
 	- Death of low mass star
 		- Ash core builds up
