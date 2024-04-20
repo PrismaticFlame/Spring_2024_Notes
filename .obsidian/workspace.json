@@ -32,47 +32,19 @@
             }
           },
           {
-            "id": "95c4e701140c8c69",
+            "id": "f79768f1ca2238ea",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spring_24/Final Exam Review 410.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "69f294c08e2dca21",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Spring_24/Final Exam Review 595.md",
+                "file": "Evaluation Measures and Imbalanced Datasets.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 3
-      },
-      {
-        "id": "ad6d07fd118f1f54",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "59ac9e75fc3be6f6",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "Spring_24/midterm_review.pdf"
-              }
-            }
-          }
-        ]
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -122,8 +94,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "6da9fcda892f016f",
@@ -139,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spring_24/Final Exam Review 595.md",
+                "file": "Evaluation Measures and Imbalanced Datasets.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -156,7 +127,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spring_24/Final Exam Review 595.md",
+                "file": "Evaluation Measures and Imbalanced Datasets.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -179,7 +150,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spring_24/Final Exam Review 595.md"
+                "file": "Evaluation Measures and Imbalanced Datasets.md"
               }
             }
           }
@@ -200,17 +171,33 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "69f294c08e2dca21",
+  "active": "f79768f1ca2238ea",
   "lastOpenFiles": [
-    "Spring_24/midterm_review.pdf",
     "Spring_24/Final Exam Review 595.md",
-    "Feature engineering.md",
+    "Evaluation Measures and Imbalanced Datasets.md",
+    "Neural Networks 2.md",
+    "Spring_24/neural_networks_2.pdf",
+    "Spring_24/neural_networks_2.pdf.crdownload",
+    "Spring_24/midterm_review.pdf",
+    "artificial neuron.md",
+    "Spring_24/artificial_neural_network.png",
+    "Spring_24/artificial_neural_network.png.crdownload",
+    "Spring_24/artifical_neuron.png",
+    "Spring_24/artifical_neuron.png.crdownload",
+    "Pasted image 20240420160415.png",
     "Spring_24/Final Exam Review 144.md",
+    "Spring_24/Final Exam Review 410.md",
+    "Pasted.md",
+    "Given the following equations for entropy, calculate the entropy of the following dataset.md",
+    "A KNN classifier makes few assumptions about the distribution of the data.md",
+    "Information depends on context and surprise.md",
+    "A major benefit of decision trees is that they can handle categorical data.md",
+    "Major benefit of decision trees is that they are highly interpretable.md",
+    "Feature engineering.md",
     "[midterm_review.pdf].md",
     "[[midterm_review.pdf]].md",
     "Spring_24/Outliers.md",
     "Spring_24/Neural Networks and Machine Learning.md",
-    "Spring_24/Final Exam Review 410.md",
     "Final Exam Review 472.md",
     "Final Exam Review 144.md",
     "[[midterm_review.pdf]]midterm_review.pdf].md",
@@ -225,27 +212,12 @@
     "Homework 2_472.pdf",
     "Spring_24/Untitled.md",
     "Spring_24/Timeline View (of Thread SchedulE.md",
-    "Spring_24/Soupline.cpp.md",
-    "Spring_24/Race Condition again - what happens here.md",
-    "Spring_24/Project 3.md",
-    "Spring_24/Person.cpp.md",
-    "Spring_24/Astronomy.md",
-    "Spring_24/Operating Systems.md",
-    "Spring_24/Introduction To Robotics.md",
-    "Spring 24/Study for Test 2.md",
     "Spring_24/threads_race_condition_again.pdf",
     "Spring_24/prod_cons_4.png",
     "Spring 24/prod_cons_4.png.crdownload",
     "Spring_24/prod_cons_3.png",
-    "Spring 24/prod_cons_3.png.crdownload",
     "Spring_24/prod_cons_2.png",
-    "Spring 24/prod_cons_2.png.crdownload",
     "Spring_24/prod_cons_1.png",
-    "Spring 24/prod_cons_1.png.crdownload",
-    "Spring_24/thread_ticket_agent.pdf",
-    "Spring_24/race_conditions_2.png",
-    "Spring_24/race_conditions_1.png",
-    "Spring_24/threads_stack_pointers.png",
-    "Spring_24/array_iterator.png"
+    "Spring_24/race_conditions_2.png"
   ]
 }
