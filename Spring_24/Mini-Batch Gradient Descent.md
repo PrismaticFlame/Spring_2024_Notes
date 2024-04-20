@@ -24,7 +24,7 @@ The update rule in Mini-Batch GD is a variation of the gradient descent update r
 $\theta = \theta - \alpha \nabla J_{\text{mini-batch}}(\theta)$
 
 Here:
-- $\alpha$ is the [[learning rate]].
+- $\alpha$ is the [[Learning Rate]].
 - $\nabla J_{\text{mini-batch}}(\theta)$ is the gradient of the cost function with respect to the parameters $\theta$ based on the selected mini-batch.
 
 ### Advantages of Mini-Batch Gradient Descent:

@@ -1,4 +1,4 @@
-Regularization is a technique used in machine learning and statistical modeling to prevent [[overfitting]] and improve the generalization performance of a model. Overfitting occurs when a model learns the training data too well, capturing noise and outliers, but fails to generalize well to new, unseen data. [[Regularization]] introduces a [[penalty term]] to the objective function being optimized, discouraging the model from fitting the training data too closely.
+Regularization is a technique used in machine learning and statistical modeling to prevent [[Overfitting]] and improve the generalization performance of a model. Overfitting occurs when a model learns the training data too well, capturing noise and outliers, but fails to generalize well to new, unseen data. [[Regularization]] introduces a [[Penalty Term]] to the objective function being optimized, discouraging the model from fitting the training data too closely.
 
 ### Key Points about Regularization:
 
@@ -9,7 +9,7 @@ Regularization is a technique used in machine learning and statistical modeling 
    - There are different types of regularization commonly used in machine learning:
      - **L1 Regularization (Lasso):** Adds the absolute values of the coefficients to the objective function.
      - **[[L2 Regularization]] (Ridge):** Adds the squared values of the coefficients to the objective function.
-     - **Elastic Net:** Combines both L1 and [[L2 regularization]].
+     - **Elastic Net:** Combines both L1 and [[L2 Regularization]].
 
 3. **Regularization Parameter (Lambda):**
    - The strength of the regularization is controlled by a hyperparameter often denoted as \( \lambda \) (lambda). The larger the value of \( \lambda \), the stronger the regularization effect. The choice of \( \lambda \) is a trade-off between fitting the training data well and avoiding overfitting.

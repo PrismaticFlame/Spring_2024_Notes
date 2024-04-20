@@ -29,7 +29,7 @@ Given a cost function \(J(\theta)\) where \(\theta\) represents the parameters (
 $$\theta = \theta - \alpha \nabla J(\theta)$$
 
 Here:
-- $\alpha$ is the [[learning rate]], a hyperparameter that determines the size of the steps taken in each iteration.
+- $\alpha$ is the [[Learning Rate]], a hyperparameter that determines the size of the steps taken in each iteration.
 - $\nabla J(\theta)$ is the gradient of the cost function with respect to the parameters \(\theta\).
 
 ### Types of Gradient Descent:

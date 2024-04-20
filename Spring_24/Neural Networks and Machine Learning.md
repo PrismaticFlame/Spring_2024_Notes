@@ -460,7 +460,7 @@ $$\frac{1}{n}(Y^TY-Y^TX\theta - X^T\theta^TY + X^T\theta^TX\theta)$$
 - Avoids/reduces memory and computational requirements
 - Works with more loss functions
 - Guarantee the optimum solution in theory, but not in practice
-- Requires [[hyperparameter]] tuning
+- Requires [[Hyperparameter]] tuning
 
 1. Start somewhere on the loss surface
 2. Find the direction to move
@@ -480,7 +480,7 @@ $$\theta_{new} = \theta - \eta \frac{1}{n}X^T(\hat{Y} - Y)$$
 - Gradient descent can take a long time to converge
 - If we make the learning rate too high, it may never converge (and therefore never stop)
 - We add stopping conditions
-	- Maximum number of [[epochs]] and/or small enough loss
+	- Maximum number of [[Epochs]] and/or small enough loss
 
 - Stop when number of epochs > max_epoch
 - Stop when loss is < min_loss
@@ -627,7 +627,7 @@ $$f(x) = tanh(x) = \frac{2}{1+e^{-2x}}-1$$
 - Unlike logistic, its range is -1 to 1. This is a greater range meaning that it is often steeper
 	- This it has a higher gradient which can reduce the vanishing gradient problem
 
-## [[ReLu]] Function
+## [[ReLU]] Function
 - Just like tanh and logistic, ReLu is nonlinear, so it can be used nonlinear regression problems
 - Not truly differentiable, but differentiable in practice
 	- If input <= 0, derivative is 0, else derivative is 1

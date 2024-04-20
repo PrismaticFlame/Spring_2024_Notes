@@ -10,7 +10,7 @@ Here are some key characteristics and considerations regarding flat page tables:
 
 4. **Efficient Address Translation:** Despite the potential memory overhead, flat page tables offer efficient address translation since the mapping between virtual and physical addresses is direct and does not require complex indexing or traversal of hierarchical structures.
 
-5. **[[Page Fault]] Handling:** Page faults in flat page table systems are relatively straightforward to handle. When a page fault occurs, the operating system consults the flat page table to determine the mapping for the requested virtual page and brings the corresponding physical page into memory if it is not already resident.
+5. **[[Page fault]] Handling:** Page faults in flat page table systems are relatively straightforward to handle. When a page fault occurs, the operating system consults the flat page table to determine the mapping for the requested virtual page and brings the corresponding physical page into memory if it is not already resident.
 
 6. **Simplicity:** Flat page tables are conceptually simple and easy to implement compared to hierarchical page table structures such as multi-level page tables or inverted page tables.
 

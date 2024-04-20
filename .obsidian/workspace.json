@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spring 24/Final Exam Review 472.md",
+                "file": "Spring_24/Final Exam Review 472.md",
                 "mode": "source",
                 "source": false
               }
@@ -25,19 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spring 24/Final Exam Review 144.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "e18523b91e27ea7e",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Final Exam Review 595.md",
+                "file": "Spring_24/Final Exam Review 144.md",
                 "mode": "source",
                 "source": false
               }
@@ -49,14 +37,42 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Final Exam Review 410.md",
+                "file": "Spring_24/Final Exam Review 410.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "69f294c08e2dca21",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Spring_24/Final Exam Review 595.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 3
+      },
+      {
+        "id": "ad6d07fd118f1f54",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "59ac9e75fc3be6f6",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "Spring_24/midterm_review.pdf"
+              }
+            }
+          }
+        ]
       }
     ],
     "direction": "vertical"
@@ -106,7 +122,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "6da9fcda892f016f",
@@ -122,7 +139,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Final Exam Review 595.md",
+                "file": "Spring_24/Final Exam Review 595.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -139,7 +156,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Final Exam Review 595.md",
+                "file": "Spring_24/Final Exam Review 595.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -162,16 +179,16 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Final Exam Review 595.md"
+                "file": "Spring_24/Final Exam Review 595.md"
               }
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -183,50 +200,52 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "e18523b91e27ea7e",
+  "active": "69f294c08e2dca21",
   "lastOpenFiles": [
-    "Final Exam Review 410.md",
-    "Spring 24/Final Exam Review 472.md",
-    "Spring 24/Final Exam Review 144.md",
-    "Final Exam Review 595.md",
-    "Spring 24/main_sequence_stars.png",
-    "Spring 24/main_sequence_stars.png.crdownload",
-    "Spring 24/star_cluster_age.png",
-    "Spring 24/Study for Test 2 410.md",
-    "Spring 24/How a star moves along the H-R diagram as it ages.md",
-    "Homework 2_472.pdf",
-    "Final Exam Review 144.md",
+    "Spring_24/midterm_review.pdf",
+    "Spring_24/Final Exam Review 595.md",
+    "Feature engineering.md",
+    "Spring_24/Final Exam Review 144.md",
+    "[midterm_review.pdf].md",
+    "[[midterm_review.pdf]].md",
+    "Spring_24/Outliers.md",
+    "Spring_24/Neural Networks and Machine Learning.md",
+    "Spring_24/Final Exam Review 410.md",
     "Final Exam Review 472.md",
-    "Spring 24/Untitled.md",
-    "Spring 24/Timeline View (of Thread SchedulE.md",
-    "Spring 24/Soupline.cpp.md",
-    "Spring 24/Race Condition again - what happens here.md",
-    "Spring 24/Project 3.md",
-    "Spring 24/Person.cpp.md",
-    "Spring 24/Astronomy.md",
-    "Spring 24/Operating Systems.md",
-    "Spring 24/Introduction To Robotics.md",
-    "Spring 24/Neural Networks and Machine Learning.md",
+    "Final Exam Review 144.md",
+    "[[midterm_review.pdf]]midterm_review.pdf].md",
+    "[.md",
+    "Spring 24/midterm_review.pdf.crdownload",
+    "Spring_24/Final Exam Review 472.md",
+    "Spring_24/main_sequence_stars.png",
+    "Spring 24/main_sequence_stars.png.crdownload",
+    "Spring_24/star_cluster_age.png",
+    "Spring_24/Study for Test 2 410.md",
+    "Spring_24/How a star moves along the H-R diagram as it ages.md",
+    "Homework 2_472.pdf",
+    "Spring_24/Untitled.md",
+    "Spring_24/Timeline View (of Thread SchedulE.md",
+    "Spring_24/Soupline.cpp.md",
+    "Spring_24/Race Condition again - what happens here.md",
+    "Spring_24/Project 3.md",
+    "Spring_24/Person.cpp.md",
+    "Spring_24/Astronomy.md",
+    "Spring_24/Operating Systems.md",
+    "Spring_24/Introduction To Robotics.md",
     "Spring 24/Study for Test 2.md",
-    "Race Condition again - what happens here.md",
-    "Spring 24/threads_race_condition_again.pdf",
-    "Spring 24/prod_cons_4.png",
+    "Spring_24/threads_race_condition_again.pdf",
+    "Spring_24/prod_cons_4.png",
     "Spring 24/prod_cons_4.png.crdownload",
-    "Spring 24/prod_cons_3.png",
+    "Spring_24/prod_cons_3.png",
     "Spring 24/prod_cons_3.png.crdownload",
-    "Spring 24/prod_cons_2.png",
+    "Spring_24/prod_cons_2.png",
     "Spring 24/prod_cons_2.png.crdownload",
-    "Spring 24/prod_cons_1.png",
+    "Spring_24/prod_cons_1.png",
     "Spring 24/prod_cons_1.png.crdownload",
-    "Thread Ticket Agent Slides.md",
-    "Spring 24/thread_ticket_agent.pdf",
-    "Spring 24/threads_starts_diff.pdf",
-    "Spring 24/race_conditions_2.png",
-    "Spring 24/race_conditions_2.png.crdownload",
-    "Spring 24/race_conditions_1.png",
-    "Timeline View (of Thread SchedulE.md",
-    "Spring 24/threads_stack_pointers.png",
-    "Spring 24/Symmetric Multi-Processors.md",
-    "Spring 24/array_iterator.png"
+    "Spring_24/thread_ticket_agent.pdf",
+    "Spring_24/race_conditions_2.png",
+    "Spring_24/race_conditions_1.png",
+    "Spring_24/threads_stack_pointers.png",
+    "Spring_24/array_iterator.png"
   ]
 }

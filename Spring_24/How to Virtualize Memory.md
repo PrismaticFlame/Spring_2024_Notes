@@ -24,7 +24,7 @@ Virtualizing memory involves abstracting physical memory resources to create a v
 - **Lazy Loading:**
   - With demand paging, not all pages of a process are loaded into physical memory at once. Instead, pages are loaded into memory only when they are accessed (on-demand). This reduces initial memory overhead and improves memory utilization.
 
-- **[[Page Fault]] Handling:**
+- **[[Page fault]] Handling:**
   - When a process accesses a page that is not currently in physical memory, a page fault occurs. The operating system handles page faults by loading the required page from disk into memory and updating the page table accordingly.
 
 ### 4. **Swapping:**

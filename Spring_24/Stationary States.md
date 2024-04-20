@@ -18,7 +18,7 @@ A stationary state is a special solution to the TDSE where the time dependence o
 $$\Psi(\mathbf{r}, t) = \psi(\mathbf{r}) e^{-iEt/\hbar}$$
 
 Here:
-- $\psi(\mathbf{r})$ is the spatial part of the [[wave function]], representing the stationary spatial distribution.
+- $\psi(\mathbf{r})$ is the spatial part of the [[Wave Function]], representing the stationary spatial distribution.
 - $E$ is the energy eigenvalue associated with that state.
 
 ### Properties of Stationary States:

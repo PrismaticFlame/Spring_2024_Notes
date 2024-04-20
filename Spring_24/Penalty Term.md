@@ -3,7 +3,7 @@ In the context of machine learning and optimization, a penalty term refers to an
 ### Key Points about Penalty Terms:
 
 1. **Purpose:**
-   - The penalty term serves to add [[regularization]] to the learning process. It modifies the optimization problem to balance the fit to the training data with the complexity or size of the model.
+   - The penalty term serves to add [[Regularization]] to the learning process. It modifies the optimization problem to balance the fit to the training data with the complexity or size of the model.
 
 2. **Types of Penalty Terms:**
    - Different types of penalty terms are used in regularization, such as L1 regularization (absolute values of coefficients), L2 regularization (squared values of coefficients), and elastic net regularization (a combination of L1 and L2). These penalty terms are added to the objective function during training.

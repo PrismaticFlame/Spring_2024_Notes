@@ -317,7 +317,7 @@ $J$ - Inertia
 
 # [[Frequency Response]]
 
-# Computers are [[discrete]] time
+# Computers are [[Discrete]] time
 - Sample sensor data
 	- Takes time to process data after sensing
 - Estimate current state
@@ -328,7 +328,7 @@ $J$ - Inertia
 	- Data conversion and transmission takes time
 
 - Typical control rates of 10-1000Hz (samples per second)
-- Need [[discrete]] approximations to derivatives and integrals
+- Need [[Discrete]] approximations to derivatives and integrals
 
 ## [[Discrete Time Calculations]]
 - Sample Period

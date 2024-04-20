@@ -1,4 +1,4 @@
-MLFQ stands for "Multi-Level Feedback Queue," and it is a scheduling algorithm used in operating systems for managing the execution of processes. The key idea behind MLFQ is to assign processes to different priority levels based on their behavior and performance, allowing the [[scheduler]] to adapt to the characteristics of individual processes. MLFQ is particularly effective in handling both CPU-bound and I/O-bound processes.
+MLFQ stands for "Multi-Level Feedback Queue," and it is a scheduling algorithm used in operating systems for managing the execution of processes. The key idea behind MLFQ is to assign processes to different priority levels based on their behavior and performance, allowing the [[Scheduler]] to adapt to the characteristics of individual processes. MLFQ is particularly effective in handling both CPU-bound and I/O-bound processes.
 
 ### Key Features of MLFQ:
 

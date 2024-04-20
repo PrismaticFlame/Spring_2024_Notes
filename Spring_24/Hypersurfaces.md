@@ -1,4 +1,4 @@
-A hypersurface is a generalization of the concept of a surface to higher-dimensional spaces. In mathematics, a hypersurface is a [[manifold]] of dimension one less than the ambient space. For example, in three-dimensional space, a hypersurface is a two-dimensional surface, and in n-dimensional space, a hypersurface is an (n-1)-dimensional manifold.
+A hypersurface is a generalization of the concept of a surface to higher-dimensional spaces. In mathematics, a hypersurface is a [[Manifold]] of dimension one less than the ambient space. For example, in three-dimensional space, a hypersurface is a two-dimensional surface, and in n-dimensional space, a hypersurface is an (n-1)-dimensional manifold.
 
 In more accessible terms:
 

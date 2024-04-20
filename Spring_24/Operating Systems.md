@@ -28,7 +28,7 @@ Three Sections of text:
 - I/O Techniques
 - Symmetric multi-processors
 
-## [[Basic Elements]]
+## [[Basic elements]]
 
 ## [[Microprocessors]]
 

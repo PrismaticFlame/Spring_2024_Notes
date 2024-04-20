@@ -8,7 +8,7 @@ $$i\hbar \frac{\partial \Psi}{\partial t} = \hat{H} \Psi$$
 - ( $\hbar$ ) is the reduced Planck constant.
 - ($\frac{\partial \Psi}{\partial t}$) is the partial derivative of the wave function with respect to time.
 - ($\hat{H}$) is the [[Hamiltonian]] operator.
-- ( $\Psi$ ) is the [[wave function]].
+- ( $\Psi$ ) is the [[Wave Function]].
 
 The time-independent Schrödinger Equation, which is often used when the Hamiltonian is not explicitly time-dependent, is:
 

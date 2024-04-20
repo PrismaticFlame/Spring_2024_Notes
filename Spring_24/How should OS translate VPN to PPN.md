@@ -19,7 +19,7 @@ The translation of a Virtual Page Number (VPN) to a Physical Page Number (PPN) i
 
 - The MMU combines the PPN with the offset portion of the virtual address to generate the complete physical memory address.
 
-### 6. [[Page Fault]] Handling:
+### 6. [[Page fault]] Handling:
 - If the VPN does not have a corresponding entry in the page table (indicating a page fault), the operating system must handle the fault.
 
 - The OS may retrieve the required page from secondary storage (e.g., disk) and update the page table before allowing the process to continue execution.

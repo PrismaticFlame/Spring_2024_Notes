@@ -1,4 +1,4 @@
-Ridge regression, also known as Tikhonov regularization or [[L2 regularization]], is a [[linear regression]] technique that incorporates a [[penalty term]] based on the squared magnitudes of the model coefficients. This penalty term is added to the [[Linear Regression|original loss function]], aiming to prevent [[overfitting]] and produce a more stable and well-behaved model.
+Ridge regression, also known as Tikhonov regularization or [[L2 Regularization]], is a [[Linear Regression]] technique that incorporates a [[Penalty Term]] based on the squared magnitudes of the model coefficients. This penalty term is added to the [[Linear Regression|original loss function]], aiming to prevent [[Overfitting]] and produce a more stable and well-behaved model.
 
 ### Ridge Regression Objective Function:
 
