@@ -269,6 +269,87 @@ $$gradient_{1,1} = x_1 * h_1(1-h_1) * (\theta_{1,2} * (\theta_{2,3} * (\hat{y} -
 		- AdaGrad
 		- Adam (**ada**ptive **m**oment)
 ## [[Evaluation Measures and Imbalanced Datasets]]
+- Different problem types:
+	- Regression, binary classification, multiclass classification, multilabel classification
+- How to construct and interpret a confusion matrix
+	- This can help with error analysis
+	- The error types can be used to derive new evaluation metrics
+- How to evaluate the performance of a model using a variety of metrics
+	- Accuracy, F1, precision, ROC curves
+	- macro vs. micro measures
+- We should always compare against
+	- A majority class baseline for classification, mean baseline for regression
+	- and if possible against some other a simple baseline (which you implement)
+## Dealing with Imbalanced Data
+- Learning on severely imbalanced datasets can be difficult
+	- Classifiers can learn to just predict everything as the majority class
+- This can be hard to overcome, however there are a few simple methods:
+	1. Add class weights
+	2. Artificially balance the dataset
+		- Under-sample majority class
+		- Over-sample minority class
+		- Generate synthetic data for the minority class (SMOTE)
+
+### Option 1: Add Class Weights
+- We can add class weights to make samples of different classes contribute more or less to loss
+- By default, the class weight balances the contribution of each class
+
+### Option 2: Artificially Balance the Dataset
+1. Under-sample the majority class
+	- Randomly select a fixed number of samples from each class such that the resulting dataset is balanced
+	- Problem: you are removing data which may be informative to the system
+2. Over-sample the minority class
+	- Randomly repeat a fixed number of samples from each minority class such that the resulting dataset is balanced
+	- Problem: you are repeating data which makes those points artificially more important. What if the points are outliers?
+$$Training\_Loss = J(\theta) = -\frac{1}{n}\sum_{i=1}^n loss(\hat{y_i},y_i)$$
+3. Generate Synthetic Data for the minority class
+	- This is typically a better option than over-sampling, but could be problematic if your synthetic data is not representative of your real data.
+	- A popular data generation method is “Synthetic Minority Oversampling Technique” (SMOTE)
+	- The authors recommend a combination of under-sampling the majority class and using SMOTE to over-sample the minority class. Stating that it outperforms doing only under-sampling or doing only over-sampling. 
+
+### SMOTE "Synthetic Minority Oversampling Technique"
+- SMOTE works by:
+1. For a single point, find the k-nearest neighbors and randomly select one
+2. For each feature
+	1. Find the difference between the sample and the its neighbor
+	2. Randomly generate a number between 0 and 1 and multiply it by the difference
+	3. Add the scaled difference to the feature value of that original point
+- This effectively creates new features values somewhere on a line between the point and its nearest neighbor
+- "This approach effectively forces the decision region of the minority class to become more general."
+### Notes on Class Weights and Artificially Balancing the Dataset
+- It is best, if possible, to learn with the original data distribution
+- Potential Drawbacks:
+	- Class weights/oversampling can give excessive importance to outliers
+		- So, for severely imbalanced datasets, you may not want to reweight/sample so that all classes are equally weighted in the loss calculation
+	- Under-sampling can eliminate import datapoints
+		- Particularly if the samples for a class are already sparse
+	- When you modify the dataset, you learning something that is not representative of the real world.
+		- Weighting or balancing the dataset biases the system
+			- If you are unsure of a sample, maybe you should classify it as the majority class rather than giving equal “weight”
+### Implementation Detail: Stratified Sampling
+- When you have severely imbalanced data, it is important to use stratified sampling for train/validation/test splits and cross-validation
+- Stratified sampling ensures a similar class distribution per split
+	- E.g. if the dataset is 95% negative, and 5% positive, then each fold of cross validation will have a 95%-5% class balance
+	- This is done by sampling each class independently
+- Stratified sampling is more complex for multi-label problems, and the exact solution is unclear
+
+## [[Feature Engineering]]
+
+
+## [[Weak Ensemble and Dropout]]
+
+
+## [[Deep Learning]]
+
+
+# [[Machine Vision and Convolutional Neural Networks]]
+
+
+# [[Natural Language Processing]]
+
+
+# [[Recurrent Neural Networks]]
+
 
 
 

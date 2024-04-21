@@ -37,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Evaluation Measures and Imbalanced Datasets.md",
+                "file": "Machine Vision and Convolutional Neural Networks.md",
                 "mode": "source",
                 "source": false
               }
@@ -110,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Evaluation Measures and Imbalanced Datasets.md",
+                "file": "Machine Vision and Convolutional Neural Networks.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -127,7 +127,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Evaluation Measures and Imbalanced Datasets.md",
+                "file": "Machine Vision and Convolutional Neural Networks.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -150,16 +150,16 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Evaluation Measures and Imbalanced Datasets.md"
+                "file": "Machine Vision and Convolutional Neural Networks.md"
               }
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -174,7 +174,18 @@
   "active": "f79768f1ca2238ea",
   "lastOpenFiles": [
     "Spring_24/Final Exam Review 595.md",
+    "Machine Vision and Convolutional Neural Networks.md",
+    "Weak Ensemble and Dropout.md",
+    "Deep Learning.md",
+    "Spring_24/deep_learning.pdf",
+    "Spring_24/deep_learning.pdf.crdownload",
+    "Feature Engineering.md",
+    "fmeasure.md",
+    "Spring_24/fmeasure_mutualinfo.png",
     "Evaluation Measures and Imbalanced Datasets.md",
+    "Spring_24/eval_measures_imbalanced_datasets.pdf",
+    "Spring_24/micro_averaging.png",
+    "Spring_24/micro_averaging.png.crdownload",
     "Neural Networks 2.md",
     "Spring_24/neural_networks_2.pdf",
     "Spring_24/neural_networks_2.pdf.crdownload",
@@ -203,21 +214,10 @@
     "[[midterm_review.pdf]]midterm_review.pdf].md",
     "[.md",
     "Spring 24/midterm_review.pdf.crdownload",
-    "Spring_24/Final Exam Review 472.md",
     "Spring_24/main_sequence_stars.png",
-    "Spring 24/main_sequence_stars.png.crdownload",
     "Spring_24/star_cluster_age.png",
-    "Spring_24/Study for Test 2 410.md",
-    "Spring_24/How a star moves along the H-R diagram as it ages.md",
-    "Homework 2_472.pdf",
-    "Spring_24/Untitled.md",
-    "Spring_24/Timeline View (of Thread SchedulE.md",
-    "Spring_24/threads_race_condition_again.pdf",
     "Spring_24/prod_cons_4.png",
-    "Spring 24/prod_cons_4.png.crdownload",
     "Spring_24/prod_cons_3.png",
-    "Spring_24/prod_cons_2.png",
-    "Spring_24/prod_cons_1.png",
-    "Spring_24/race_conditions_2.png"
+    "Spring_24/prod_cons_2.png"
   ]
 }
