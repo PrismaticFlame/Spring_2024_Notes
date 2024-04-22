@@ -37,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Machine Vision and Convolutional Neural Networks.md",
+                "file": "Natural Language Processing.md",
                 "mode": "source",
                 "source": false
               }
@@ -110,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Machine Vision and Convolutional Neural Networks.md",
+                "file": "Natural Language Processing.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -127,7 +127,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Machine Vision and Convolutional Neural Networks.md",
+                "file": "Natural Language Processing.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -150,7 +150,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Machine Vision and Convolutional Neural Networks.md"
+                "file": "Natural Language Processing.md"
               }
             }
           }
@@ -159,7 +159,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 290.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -173,29 +173,38 @@
   },
   "active": "f79768f1ca2238ea",
   "lastOpenFiles": [
+    "Spring_24/Final Exam Review 472.md",
+    "Natural Language Processing.md",
+    "Spring_24/word_embeddings.png",
+    "Spring_24/word_embeddings.png.crdownload",
+    "Spring_24/tf_idf_vectors.png",
+    "Spring_24/tf_idf_vectors.png.crdownload",
+    "Spring_24/cooccurrence_vectors_example.png",
+    "Spring_24/cooccurrence_vectors_example.png.crdownload",
+    "Spring_24/pyramid_language_meaning_example.png",
+    "Spring_24/pyramid_language_meaning_example.png.crdownload",
+    "Spring_24/pyramid_language_meaning.png",
+    "Spring_24/pyramid_language_meaning.png.crdownload",
+    "Spring_24/nlp_pipeline.png",
+    "Spring_24/nlp_pipeline.png.crdownload",
     "Spring_24/Final Exam Review 595.md",
     "Machine Vision and Convolutional Neural Networks.md",
+    "Spring_24/machine_vision.pdf",
+    "Spring_24/machine_vision.pdf.crdownload",
+    "Spring_24/vggNet.png",
+    "Spring_24/vggNet.png.crdownload",
+    "Spring_24/sobel_filter.png",
+    "Spring_24/sobel_filter.png.crdownload",
+    "Spring_24/machine_vision_pipelline.png",
+    "Spring_24/linear_filter_sharpening.png",
+    "Spring_24/Neural Networks and Machine Learning.md",
     "Weak Ensemble and Dropout.md",
     "Deep Learning.md",
-    "Spring_24/deep_learning.pdf",
-    "Spring_24/deep_learning.pdf.crdownload",
     "Feature Engineering.md",
     "fmeasure.md",
-    "Spring_24/fmeasure_mutualinfo.png",
     "Evaluation Measures and Imbalanced Datasets.md",
-    "Spring_24/eval_measures_imbalanced_datasets.pdf",
-    "Spring_24/micro_averaging.png",
-    "Spring_24/micro_averaging.png.crdownload",
     "Neural Networks 2.md",
-    "Spring_24/neural_networks_2.pdf",
-    "Spring_24/neural_networks_2.pdf.crdownload",
-    "Spring_24/midterm_review.pdf",
     "artificial neuron.md",
-    "Spring_24/artificial_neural_network.png",
-    "Spring_24/artificial_neural_network.png.crdownload",
-    "Spring_24/artifical_neuron.png",
-    "Spring_24/artifical_neuron.png.crdownload",
-    "Pasted image 20240420160415.png",
     "Spring_24/Final Exam Review 144.md",
     "Spring_24/Final Exam Review 410.md",
     "Pasted.md",
@@ -208,16 +217,7 @@
     "[midterm_review.pdf].md",
     "[[midterm_review.pdf]].md",
     "Spring_24/Outliers.md",
-    "Spring_24/Neural Networks and Machine Learning.md",
     "Final Exam Review 472.md",
-    "Final Exam Review 144.md",
-    "[[midterm_review.pdf]]midterm_review.pdf].md",
-    "[.md",
-    "Spring 24/midterm_review.pdf.crdownload",
-    "Spring_24/main_sequence_stars.png",
-    "Spring_24/star_cluster_age.png",
-    "Spring_24/prod_cons_4.png",
-    "Spring_24/prod_cons_3.png",
-    "Spring_24/prod_cons_2.png"
+    "Final Exam Review 144.md"
   ]
 }
