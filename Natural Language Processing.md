@@ -1,4 +1,4 @@
-# Natural Language Processing (NLP)
+# [Natural Language Processing (NLP)](../Spring_24/natural_language_processing.pdf)
 - Humans communicate primarily through language
 - Vast amounts of knowledge is stored as machine readable natural language text
 	- This information is inaccessible to traditional computing methods which require structured data
@@ -128,4 +128,46 @@ Word embeddings are dense vectors of real-values rather than sparse vectors of b
 	1. Bag of Words Representation = take sum or average constituent one-hot vectors
 	2. Term Frequency - Inverse Document Frequency (TF-IDF) vector = TF-IDF value of each of its constituent terms. TF-IDF value is the number of times a word occurs in that document divided by the number of times it occurs in all documents
 	3. Mean of sum of word embeddings
+
+# Token Classification Example: Named Entity Recognition
+- Named Entity Recognition is a token classification task
+- For each token, decide if it is an entity of interest (e.g. a person's name)
+![[token_classification_example.png]]
+
+
+# Language Models
+- Language models have become ubiquitous in NLP
+	- Language models are deep neural networks trained on massive corpora
+- Language models generate contextualized word embeddings and (sometimes) text segment embeddings
+	- These embeddings consider both the meaning of a word (using word embeddings) and its surrounding context to generate a vector representation of the word's meaning it is current context
+	- I ate by the river **bank** vs. I deposited money in the **bank**
+	- "bank" has the same word embedding for both contexts, language models add context to the embedding of a word
+- A language model is therefore a trained deep neural network that generates a vector representation of a sequence of words
+
+- A sentence is input as a series of static word vectors (e.g. word embeddings)
+- The language model does a transformation based on its learned weights
+- The sentence is output as a series of contextualized embeddings
+
+Then, you can use whatever classifier you want using the contextualized embeddings as input with or without other features
+
+Popular language models include:
+- eLMO - BiLSTM based
+- BERT - Transformer based
+- GPT - Transformer based
+- LLaMa - Transformer based
+
+Lots of others:
+- ERNIE
+- XLNet
+- Megatron
+
+## How do the models learn?
+**Self-Supervised Learning**
+- These models are pre-trained to predict the next word in a sequence
+	- And also sometimes the next sentence in a sequence
+- This is really clever and it means that any text can be used as labeled training data
+
+You can use whatever classifier you want. The embeddings are just features
+
+Typically though, neural networks are used, since it allows backpropagation through the whole network (although this is possible with many other classifiers too)
 
