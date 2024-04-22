@@ -1,0 +1,31 @@
+# [Neural Networks 2](../Spring_24/neural_networks_2.pdf)
+- Densely Connected
+	- A "Dense Layer" in Keras is densely connected to its input layer, meaning every input neuron is connected to each neuron in the layer
+	- This is pretty standard for neural networks
+- Classification Problems Types
+	- Binary - each sample is a member of exactly one class
+		- Final output is a 0 or 1 indicating class membership
+	- Multiclass - each sample is a member of exactly one class (label probabilities are dependent on each other)
+		- Final output contains exactly one "1"
+	- Multilabel - each sample is a member of zero or more labels (label probabilities are independent from one another)
+		- Final output contains zero or more "1"'s
+- Interpreting Multilabel Output
+	- The output layer must have the same number of neurons as the number of labels
+	- Each label is assumed to be independent
+	- Each output is the probability of having that one label
+	- Sigmoid (logistic) activation function at each output node to ensure this interpretation
+- Loss for Multilabel Problems
+	- Since the output is just multiple binary outputs, we use binary cross entropy (BCE) as the loss function
+	- The error of each output neuron (needed for back-propagation) is the BCE for that label
+	- We can interpret the total loss of the network as the summed BCE
+	- The problem is no longer binary, so instead of binary cross entropy we use categorical cross entropy
+- Softmax Activation Function
+	- The softmax function is a generalization of the logistic function to multiple classes/dimensions
+	- We use the softmax activation function on the last layer of multiclass classification problems to ensure the output is a probability distribution over the number of classes
+	- $$softmax({\hat{y}}\overset{->})_i = \frac{\hat{_i}}{\sum_{j=1}^c\hat{y_i}}$$
+	- Where $\hat{y}$ is a vector of outputs and c is the number of classes
+	- This is just the output divided by the sum of all outputs
+- Categorical Cross Entropy
+	- We changed our loss function, so now we have to change how we compute the derviate
+	- $$J(\theta) = -\frac{1}{n}\sum_{i=1}^n ln(\frac{e^{y_p}}{\sum_{i=1}^c e^{\hat{y_i}}})$$
+	- But, we aren’t going to cover this. It doesn’t change backpropagation much, just the error portion of the derivative on the last layer. Just remember, if you change your loss function, you are changing the surface you are performing gradient descent on. Therefore you must correctly calculate the derivative on that surface.
