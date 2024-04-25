@@ -20,6 +20,18 @@
             }
           },
           {
+            "id": "25a0a89a2c297879",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "conflict-files-obsidian-git.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
             "id": "c65f4dfa7c0ca5a1",
             "type": "leaf",
             "state": {
@@ -43,7 +55,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -110,7 +123,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spring_24/Final Exam Review 595.md",
+                "file": "conflict-files-obsidian-git.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -127,7 +140,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spring_24/Final Exam Review 595.md",
+                "file": "conflict-files-obsidian-git.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -150,7 +163,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spring_24/Final Exam Review 595.md"
+                "file": "conflict-files-obsidian-git.md"
               }
             }
           }
@@ -172,10 +185,13 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "ec5c0ea1bff607df",
+  "active": "25a0a89a2c297879",
   "lastOpenFiles": [
-    "Evaluation Measures and Imbalanced Datasets.md",
     "Spring_24/Final Exam Review 595.md",
+    "conflict-files-obsidian-git.md",
+    "Spring_24/final_exam_review_595_slides.pdf",
+    "Final Exam Review 595_slides.md",
+    "Evaluation Measures and Imbalanced Datasets.md",
     "Feature Engineering.md",
     "Weak Ensemble and Dropout.md",
     "Deep Learning.md",
@@ -204,7 +220,6 @@
     "Spring_24/unrolling_rnn.png",
     "Spring_24/unrolling_rnn.png.crdownload",
     "Spring_24/simple_recurrent_network.png",
-    "Spring_24/simple_recurrent_network.png.crdownload",
     "Spring_24/token_classification_example.png",
     "Spring_24/word_embeddings.png",
     "Spring_24/tf_idf_vectors.png",
@@ -217,8 +232,6 @@
     "Information depends on context and surprise.md",
     "A major benefit of decision trees is that they can handle categorical data.md",
     "Major benefit of decision trees is that they are highly interpretable.md",
-    "Feature engineering.md",
-    "[midterm_review.pdf].md",
-    "[[midterm_review.pdf]].md"
+    "Feature engineering.md"
   ]
 }
