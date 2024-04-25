@@ -13,9 +13,50 @@
             "state": {
               "type": "markdown",
               "state": {
+                "file": "Spring_24/Final Exam Review 595.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "6fa0bd0de2df985e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Final Exam Review 595_slides.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "c25721a5147b3502",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
                 "file": "Spring_24/Final Exam Review 472.md",
                 "mode": "source",
                 "source": false
+              }
+            }
+          }
+        ],
+        "currentTab": 1
+      },
+      {
+        "id": "8a0c65e30cbdb892",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "470973b2f0845b7d",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "Spring_24/final_exam_review_595_slides.pdf"
               }
             }
           }
@@ -86,7 +127,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spring_24/Final Exam Review 472.md",
+                "file": "Final Exam Review 595_slides.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +144,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spring_24/Final Exam Review 472.md",
+                "file": "Final Exam Review 595_slides.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +167,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spring_24/Final Exam Review 472.md"
+                "file": "Final Exam Review 595_slides.md"
               }
             }
           }
@@ -148,10 +189,14 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "ec5c0ea1bff607df",
+  "active": "6fa0bd0de2df985e",
   "lastOpenFiles": [
     "Spring_24/Final Exam Review 595.md",
+    "Final Exam Review 595_slides.md",
     "Spring_24/Final Exam Review 472.md",
+    "Spring_24/final_exam_review_595_slides.pdf",
+    "Spring_24/final_exam_review_595_slides.pdf.crdownload",
+    "~$0_Mid1_s24_key.docx",
     "Spring_24/Final Exam Review 144.md",
     "Recurrent Neural Networks.md",
     "Spring_24/rnn_repeating_module.png",
@@ -168,10 +213,7 @@
     "Spring_24/unrolling_rnn.png",
     "Spring_24/unrolling_rnn.png.crdownload",
     "Spring_24/simple_recurrent_network.png",
-    "Spring_24/simple_recurrent_network.png.crdownload",
-    "Spring_24/recurrent_neural_networks.pdf.crdownload",
     "Natural Language Processing.md",
-    "Spring_24/natural_language_processing.pdf",
     "Spring_24/token_classification_example.png",
     "Spring_24/word_embeddings.png",
     "Spring_24/tf_idf_vectors.png",
@@ -193,7 +235,6 @@
     "Major benefit of decision trees is that they are highly interpretable.md",
     "Feature engineering.md",
     "[midterm_review.pdf].md",
-    "[[midterm_review.pdf]].md",
-    "Spring_24/Outliers.md"
+    "[[midterm_review.pdf]].md"
   ]
 }
