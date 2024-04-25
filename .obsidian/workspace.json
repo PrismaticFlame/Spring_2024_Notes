@@ -13,7 +13,31 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spring_24/Final Exam Review 472.md",
+                "file": "Spring_24/Final Exam Review 595.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "c65f4dfa7c0ca5a1",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Spring_24/Study for Test 2 410.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "0275319806f0facd",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Spring_24/Final Exam Review 410.md",
                 "mode": "source",
                 "source": false
               }
@@ -86,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spring_24/Final Exam Review 472.md",
+                "file": "Spring_24/Final Exam Review 595.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +127,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spring_24/Final Exam Review 472.md",
+                "file": "Spring_24/Final Exam Review 595.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +150,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spring_24/Final Exam Review 472.md"
+                "file": "Spring_24/Final Exam Review 595.md"
               }
             }
           }
@@ -150,10 +174,22 @@
   },
   "active": "ec5c0ea1bff607df",
   "lastOpenFiles": [
+    "Evaluation Measures and Imbalanced Datasets.md",
     "Spring_24/Final Exam Review 595.md",
+    "Feature Engineering.md",
+    "Weak Ensemble and Dropout.md",
+    "Deep Learning.md",
+    "Recurrent Neural Networks.md",
+    "Natural Language Processing.md",
+    "Machine Vision and Convolutional Neural Networks.md",
+    "Spring_24/Bias.md",
+    "Spring_24/Neural Networks and Machine Learning.md",
+    "Spring_24/final_exam_review_595.pdf",
+    "Spring_24/final_exam_review_595.pdf.crdownload",
+    "Spring_24/Final Exam Review 410.md",
+    "Spring_24/Study for Test 2 410.md",
     "Spring_24/Final Exam Review 472.md",
     "Spring_24/Final Exam Review 144.md",
-    "Recurrent Neural Networks.md",
     "Spring_24/rnn_repeating_module.png",
     "Spring_24/rnn_repeating_module.png.crdownload",
     "Spring_24/recurrent_neural_networks.pdf",
@@ -169,22 +205,12 @@
     "Spring_24/unrolling_rnn.png.crdownload",
     "Spring_24/simple_recurrent_network.png",
     "Spring_24/simple_recurrent_network.png.crdownload",
-    "Spring_24/recurrent_neural_networks.pdf.crdownload",
-    "Natural Language Processing.md",
-    "Spring_24/natural_language_processing.pdf",
     "Spring_24/token_classification_example.png",
     "Spring_24/word_embeddings.png",
     "Spring_24/tf_idf_vectors.png",
-    "Machine Vision and Convolutional Neural Networks.md",
-    "Spring_24/Neural Networks and Machine Learning.md",
-    "Weak Ensemble and Dropout.md",
-    "Deep Learning.md",
-    "Feature Engineering.md",
     "fmeasure.md",
-    "Evaluation Measures and Imbalanced Datasets.md",
     "Neural Networks 2.md",
     "artificial neuron.md",
-    "Spring_24/Final Exam Review 410.md",
     "Pasted.md",
     "Given the following equations for entropy, calculate the entropy of the following dataset.md",
     "A KNN classifier makes few assumptions about the distribution of the data.md",
@@ -193,7 +219,6 @@
     "Major benefit of decision trees is that they are highly interpretable.md",
     "Feature engineering.md",
     "[midterm_review.pdf].md",
-    "[[midterm_review.pdf]].md",
-    "Spring_24/Outliers.md"
+    "[[midterm_review.pdf]].md"
   ]
 }
